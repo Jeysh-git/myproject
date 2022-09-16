@@ -53,6 +53,7 @@
   "dependencies": {
     "@ember/string": "^3.0.0",
     "ember-bootstrap": "^2.6.1",
-    "ember-cli-sass": "^10.0.0"
+    "ember-cli-sass": "^10.0.0",
+    "ember-svg-jar": "^2.3.3"
   }
 }
