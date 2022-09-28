@@ -1,0 +1,16 @@
+
+{{!-- {{yield}} --}}
+<div class="avatar-container" style = "background-color: {{colorpicker (initial title)}}">
+    {{#if imm}}
+        <img src="{{imm}}" width = "80px" height="80px">
+    {{else}}
+        <div class="employee-initial" >
+            <p> {{initial title}} </p>
+        </div>
+    {{/if}}
+    {{outlet}}
+</div>
+
+
+
+

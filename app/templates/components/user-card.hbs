@@ -1,0 +1,17 @@
+{{!-- {{yield}} --}}
+
+<div class = "card-container">
+    {{user-avatar title=firstname imm=image}}
+    <div class = "namebox">
+        <p> 
+        {{firstname}}
+        {{lastname}}
+        </p>
+    </div>
+
+    <div class = "emailbox">
+        <p> {{email}}</p>
+    </div>
+    {{outlet}}
+</div>
+
