@@ -11,97 +11,68 @@ body {
 }
 
 .navbar-left {
-    height: 820px;
+    position: fixed;
     width: 60px;
-    position: absolute;
     z-index: 1;
-    top: 0;
-    left: 0;
-    right:0;
-    bottom:0;
+    height:100%;
     background-color: $leftnav-color;
-    overflow: auto;
  }
 
  .leftbar-logo {
-    position: absolute;
     height: 52px;
-    left: 0%;
-    right: 0%;
-    top: 0px;
     width:60px;
     background: $leftnav-color;
     box-shadow: 0px 1px 0px #41637C, 0px 2px 0px #27303E;
  }
 
  .logoimg {
-    position: absolute;
-    left: 30%;
-    right: 28.33%;
-    top: 14px;
     opacity: 0.5;
+    margin:15px;
  }
 
  .header{
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    width:1380px;
     height:54px;
     background-color: #ffffff;
-    margin-left:60px;
     display:flex;
-    justify-content: flex-start;
  }
 
  .headerimg{
-    position: absolute;
     background: #FFFFFF;
-    width:34px;
-    height:34px;
-    top:8.5px;
-    left:34.63px;
+    margin-left:90px;
+    margin-top:10px;
  }
 
  .header-text{
-    position: absolute;
     height: 17px;
-    left: 6.3%;
-    right: 0%;
-    top: 15px;
     font-family: $header-font;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 16px;
     color: #41637C;
+    margin-left: 15px;
+    margin-top:15px;
  }
 
  .footer {
-    box-sizing: border-box;
-    position: absolute;
-    width: 1380px;
-    height: 20px;
-    left: 60px;
-    top: 800px;
-    bottom:0%;
-    background: #F5F7F9;
-    border: 1px solid #CFD7DF;
+   position: fixed;
+   height: 20px;
+   width:100%;
+   bottom: 0%;
+   background: #F5F7F9;
+   border: 1px solid #CFD7DF;
  }
 
  .footer-text{
-    width:280px;
     height:16px;
-    left:530px;
-    position: absolute;
+    width:250px;
+    margin-left: 600px;
+    bottom:0;
     font-family: $footer-font;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     color: #607787;
-    position: absolute;
  }
  
