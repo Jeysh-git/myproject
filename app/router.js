@@ -8,6 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('users');
+  this.route('teams');
+  this.route('teamss');
 });
 
 export default Router;

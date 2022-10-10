@@ -6,5 +6,7 @@ export default DS.Model.extend({
     email: DS.attr('string'),
     team: DS.attr('string'),
     image: DS.attr('string'),
-    joiningDate: DS.attr('date')
+    joiningDate: DS.attr('date'),
+
+    // team: DS.belongsTo('teams')
 });
