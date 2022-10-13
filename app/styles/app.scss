@@ -1,0 +1,78 @@
+
+@import "ember-bootstrap/bootstrap";
+
+$header-font: SF UI Text;
+$footer-font: SF Pro Text;
+$body-color: #e5e5e5;
+$leftnav-color :#12344d ;
+
+body {
+    background-color: $body-color ;
+}
+
+.navbar-left {
+    position: fixed;
+    width: 60px;
+    z-index: 1;
+    height:100%;
+    background-color: $leftnav-color;
+ }
+
+ .leftbar-logo {
+    height: 52px;
+    width:60px;
+    background: $leftnav-color;
+    box-shadow: 0px 1px 0px #41637C, 0px 2px 0px #27303E;
+ }
+
+ .logoimg {
+    opacity: 0.5;
+    margin:15px;
+ }
+
+ .header{
+    height:54px;
+    background-color: #ffffff;
+    display:flex;
+ }
+
+ .headerimg{
+    background: #FFFFFF;
+    margin-left:90px;
+    margin-top:10px;
+ }
+
+ .header-text{
+    height: 17px;
+    font-family: $header-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+    color: #41637C;
+    margin-left: 15px;
+    margin-top:15px;
+ }
+
+ .footer {
+   position: fixed;
+   height: 20px;
+   width:100%;
+   bottom: 0%;
+   background: #F5F7F9;
+   border: 1px solid #CFD7DF;
+ }
+
+ .footer-text{
+    height:16px;
+    width:250px;
+    margin-left: 600px;
+    bottom:0;
+    font-family: $footer-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #607787;
+ }
+ 
