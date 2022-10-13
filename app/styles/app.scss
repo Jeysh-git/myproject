@@ -110,18 +110,22 @@ body {
    align-self: center;
  }
 
-.button {
-   position: absolute;
-   height: 30px;
-   width:30px;
-   left: 25%;
-   right: 28.33%;
-   top: 65px;
+ .content-container {
+   // border: 1px solid black;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   // justify-content:space-between;
+   margin-left:90px;
+}
+
+.users-button {
    border-radius: 4px;
+   margin-left:18px;
    background: #fff;
 }
 
-.button.active {
+.users-button.active {
    background: #7052CC;;
 }
 

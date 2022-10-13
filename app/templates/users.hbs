@@ -1,5 +1,3 @@
-
-
 <div class="container1">
     <div class="sub-header">
         <div class = "subheader-text">Employees</div>
@@ -7,11 +5,9 @@
             Total Employees: {{model.length}}
         </div>
     </div>
-    {{#user-cards}}
-        {{#each model as |avatar|}}
-            {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
-        {{/each}}
-    {{/user-cards}}
-    {{outlet}}
+    <div class="cards-container">
+        {{user-cards members = model}}
+        {{outlet}}
+    </div>
 </div>
 
