@@ -1,0 +1,10 @@
+{{!-- {{yield}} --}}
+
+<div class = "container2">
+</div>
+   <div class="content-container">
+      {{#each teamsl as |avatar|}}
+         {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
+      {{/each}}
+   </div>
+   

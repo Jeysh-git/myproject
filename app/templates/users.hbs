@@ -1,0 +1,13 @@
+<div class="container1">
+    <div class="sub-header">
+        <div class = "subheader-text">Employees</div>
+        <div class = "count-text">
+            Total Employees: {{model.length}}
+        </div>
+    </div>
+    <div class="cards-container">
+        {{user-cards members = model}}
+        {{outlet}}
+    </div>
+</div>
+
