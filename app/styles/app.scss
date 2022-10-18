@@ -118,6 +118,17 @@ body {
    flex-direction: row;
 }
 
+.item-lists::after {
+   position: absolute;
+   right: 1.5rem;
+   content: '✓';
+   font-weight: 600;
+ }
+
+ .item-lists:hover {
+   background-color: #E5F6FF;
+ }
+
  .dropdown-text{
    margin:10px;
    font-family: 'SF Pro Text';
@@ -161,12 +172,18 @@ body {
 
  .item-lists {
    font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
-   font-size: 14px;
-   line-height: 25px;
-   letter-spacing: -0.08px;
-   color: #12344D;
+   width: 154px;
+height: 18px;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+
+
+/* 00-Freshworks */
+
+color: #183247;
 }
 
 .sortby-container {
@@ -182,6 +199,11 @@ body {
    flex-wrap: wrap;
    // justify-content:space-between;
    margin-left:90px;
+}
+
+.search-container {
+   // border : 1px solid;
+   // width: 100px;
 }
 
 .card-container {
