@@ -1,8 +1,8 @@
 
 @import "ember-bootstrap/bootstrap";
+@import "fontstyle";
 
-$header-font: SF UI Text;
-$footer-font: SF Pro Text;
+
 $body-color: #e5e5e5;
 $leftnav-color :#12344d ;
 
@@ -50,10 +50,10 @@ body {
    padding-right:25px;
 }
 
+
+
 .employee-initial {
    align-self: center;
-   font-family: 'SF Pro Text';
-   font-style: normal;
    font-size: 55px;
    line-height: 40px;
    color: #FFFFFF;
@@ -62,10 +62,6 @@ body {
 }
 
 .namebox {
-
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 16px;
    line-height: 20px;
    padding:10px;
@@ -74,9 +70,6 @@ body {
 }
 
 .emailbox {
-
-   font-family: 'SF Pro Text';
-   font-style: normal;
    font-weight: 400;
    font-size: 12px;
    line-height: 20px;
@@ -95,9 +88,6 @@ body {
 
  .subheader-text{
    margin-left: 80px;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 14px;
    line-height: 18px;
    align-self: center;
@@ -128,9 +118,6 @@ body {
    left: 55.7%;
    right: 0%;
    top: 15px;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 14px;
    line-height: 18px;
    color: #12344D;
@@ -197,8 +184,6 @@ body {
     width:250px;
     margin-left: 600px;
     bottom:0;
-    font-family: $footer-font;
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
@@ -218,9 +203,6 @@ body {
 
 .dropdown-text{
    margin:10px;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 400;
    font-size: 14px;
    line-height: 20px;
    letter-spacing: -0.08px;
@@ -243,9 +225,6 @@ body {
  .dropdown-toggle {
    display: flex;
    flex-direction: row;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 14px;
    line-height: 20px;
    letter-spacing: -0.08px;
@@ -258,10 +237,8 @@ body {
  }
 
  .item-lists {
-   font-family: 'SF Pro Text';
    width: 154px;
    height: 30px;
-   font-style: normal;
    font-weight: 400;
    font-size: 15px;
    line-height: 18px;
