@@ -5,7 +5,7 @@
          <BsDropdown as |dd|>
            
                 
-            <dd.toggle><div class ="option-text"><option selected> {{this.select_team}} </option></div>
+            <dd.toggle><div class ="option-text"> {{this.select_team}} </div>
                <svg class = "vector" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.00001 4.29169C3.89454 4.29169 3.76748 4.21486 3.68155 4.14064L0.208344 1.58335C0.0286562 1.41929 
                   0.0416781 0.958349 0.25001 0.750015C0.512442 0.487582 0.903657 0.593768 1.08334 0.753924L3.9961 2.8021L6.70835 
@@ -20,7 +20,7 @@
                         <a href {{ action "getTeams" teamli }}>
                         <div class ="item-lists">
                      
-                             <option > {{teamli}}</option>
+                              {{teamli}}
                               
                            </div>
                         </a>
@@ -47,21 +47,23 @@
                </svg>
             </dd.toggle>
             
-               {{#dd.menu as |ddm|}}
+               {{#dd.menu as |ddm| }}
                
                   {{!-- {{#each teams as |teamli|}} --}}
                      {{#ddm.item}}
-                        <a href {{ action "sortByFirstname" }}>
-                        <div class ="item-lists item-lists-checked"><option value = "firstname">First Name</option></div>
+                        <a href {{ action "sortByFields" "first_name" }}>
+                        <div class ="item-lists">First Name</div>
                         </a>
+                        
                      {{/ddm.item}}
+                     
                      {{#ddm.item}}
-                        <a href {{ action "sortByLastname" }}>
+                        <a href {{ action "sortByFields" "last_name" }} >
                         <div class ="item-lists"><option value = "lastname">Last Name</option></div>
                         </a>
                      {{/ddm.item}}
                      {{#ddm.item}}
-                        <a href {{ action "sortByDate" }}>
+                        <a href {{ action "sortByFields" "joiningDate" }}>
                         <div class ="item-lists"><option value = "joiningdate">Joining date</option></div>
                         </a>
                      {{/ddm.item}}
@@ -76,6 +78,7 @@
                         <div class ="item-lists">Descending</div>
                         </a>
                      {{/ddm.item}}
+                     
 
                   {{!-- {{/each}} --}}
                {{/dd.menu}}
@@ -83,13 +86,13 @@
          </BsDropdown>
 
 </div>
-<div class = "search-container">
+{{!-- <div class = "search-container">
 {{input value=value
         key-up=(action 'sortByFirstname')
         class="light"
         placeholder="Search By Name"}}
 {{!-- {{yield results}} --}}
-</div>
+{{!-- </div> --}}
 </div>
 <div class="content-container">
    {{#each teamsl as |avatar|}}

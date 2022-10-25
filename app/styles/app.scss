@@ -118,15 +118,16 @@ body {
    flex-direction: row;
 }
 
-.item-lists::after {
-   position: absolute;
-   right: 1.5rem;
+.item-lists:active {
+   // position: absolute;
+   // right: 1.5rem;
    content: '✓';
    font-weight: 600;
  }
 
  .item-lists:hover {
    background-color: #E5F6FF;
+   content: '✓';
  }
 
  .dropdown-text{
