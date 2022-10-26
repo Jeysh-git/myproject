@@ -5,7 +5,7 @@
          <BsDropdown as |dd|>
            
                 
-            <dd.toggle><div class ="option-text"> {{this.select_team}} </div>
+            <dd.toggle><div class ="option-text"><a class="in" href{{action "allTeams"}}> {{this.select_team}}</a> </div>
                <svg class = "vector" width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.00001 4.29169C3.89454 4.29169 3.76748 4.21486 3.68155 4.14064L0.208344 1.58335C0.0286562 1.41929 
                   0.0416781 0.958349 0.25001 0.750015C0.512442 0.487582 0.903657 0.593768 1.08334 0.753924L3.9961 2.8021L6.70835 
@@ -98,5 +98,6 @@
    {{#each teamsl as |avatar|}}
       {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
    {{/each}}
+   
 </div>
 {{!-- </div> --}}

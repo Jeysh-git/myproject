@@ -130,6 +130,10 @@ body {
    content: '✓';
  }
 
+ .item-lists.selected {
+   color: red;
+ }
+
  .dropdown-text{
    margin:10px;
    font-family: 'SF Pro Text';
