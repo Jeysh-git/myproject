@@ -3,31 +3,38 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
 
-    select_team:"All Employees",
-    team:null,
-
-    teamsl : computed ('team',function(){
-        return this.get('team')
+    selected_option:null,
+    
+    teamslist : computed ('selected_option',function(){
+        if(this.selected_option!='All Employees')
+            return this.get('members').filterBy('team',this.get('selected_option'))
+        else
+            return this.get('members').filterBy('team')
+        
     }) ,
 
     teams: computed ('members.@each.team',function(){
         return this.members.mapBy('team').uniq()
-    }),
 
+    }),
+    
     init() {
         this._super(...arguments);
-        this.set('team',this.get('members').filterBy('team') );
-      },
+        this.teams.push('All Employees')
+        this.set('selected_option','All Employees')
+        },
 
     actions: {
         
         getTeams(teamName) {
-            
-            this.set("select_team",teamName);
-            this.set('team',this.get('members').filterBy('team',teamName) )
 
+            this.set('selected_option',teamName);
+          
         }  ,
+
+        sortByFields(field){
+            this.set('team',this.get('members').sortBy(field))
+        }
     }
 
 });
-     
