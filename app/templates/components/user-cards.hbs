@@ -1,10 +1,27 @@
 {{!-- {{yield}} --}}
 
-<div class = "container2">
-</div>
-   <div class="content-container">
-      {{#each teamsl as |avatar|}}
-         {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
-      {{/each}}
+<div class = "usercards-container">
+   <div class = "dropdown-container">
+      <div class = "dropdown-text">Filter By</div>
+      <BsDropdown as |dd|>
+         <dd.toggle><div class ="option-text"> {{this.selected_option}} </div>
+            {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
+         </dd.toggle>
+         {{#dd.menu as |ddm|}}
+            {{#each teams as |team|}}
+               {{#ddm.item}}
+                  <a href {{ action "getTeams" team }}>
+                     <div class ="item-lists">{{team}}</div>
+                  </a>
+               {{/ddm.item}}
+            {{/each}}
+         {{/dd.menu}}
+      </BsDropdown>
    </div>
+</div>
+<div class="content-container">
+   {{#each teamslist as |avatar|}}
+      {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
+   {{/each}}
+</div>
    

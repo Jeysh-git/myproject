@@ -1,8 +1,8 @@
 
 @import "ember-bootstrap/bootstrap";
+@import "fontstyle";
 
-$header-font: SF UI Text;
-$footer-font: SF Pro Text;
+
 $body-color: #e5e5e5;
 $leftnav-color :#12344d ;
 
@@ -13,13 +13,11 @@ $leftnav-color :#12344d ;
 body {
     background-color: $body-color ;
 }
-.container1 {
-   // width:fit-content;
+.users-container {
    height:fit-content;
  }
 
  .cards-container {
-   // border:1px solid;
    display: flex;
    flex-direction: column;
  }
@@ -43,22 +41,19 @@ body {
    display:flex;
    flex-direction:column;
    align-items: center;
-   // align-content:center;
-   // justify-content: center;
 }
 
 .employee-image {
-   // border:2px solid;
    border-radius:50px;
    height:80px;
    width:80px;
    padding-right:25px;
 }
 
+
+
 .employee-initial {
    align-self: center;
-   font-family: 'SF Pro Text';
-   font-style: normal;
    font-size: 55px;
    line-height: 40px;
    color: #FFFFFF;
@@ -67,10 +62,6 @@ body {
 }
 
 .namebox {
-
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 16px;
    line-height: 20px;
    padding:10px;
@@ -79,9 +70,6 @@ body {
 }
 
 .emailbox {
-
-   font-family: 'SF Pro Text';
-   font-style: normal;
    font-weight: 400;
    font-size: 12px;
    line-height: 20px;
@@ -96,25 +84,19 @@ body {
    background-color: #ffffff;
    display:flex;
    background: #F5F7F9;
-   // justify-content:space-around;
  }
 
  .subheader-text{
    margin-left: 80px;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 14px;
    line-height: 18px;
    align-self: center;
  }
 
  .content-container {
-   // border: 1px solid black;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   // justify-content:space-between;
    margin-left:90px;
 }
 
@@ -136,9 +118,6 @@ body {
    left: 55.7%;
    right: 0%;
    top: 15px;
-   font-family: 'SF Pro Text';
-   font-style: normal;
-   font-weight: 600;
    font-size: 14px;
    line-height: 18px;
    color: #12344D;
@@ -205,11 +184,69 @@ body {
     width:250px;
     margin-left: 600px;
     bottom:0;
-    font-family: $footer-font;
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
     color: #607787;
  }
- 
+
+ .usercards-container {
+   display: flex;
+   flex-direction:row;
+ }
+
+ .dropdown-container {
+   display: flex;
+   margin-left:80px;
+   flex-direction: row;
+}
+
+.dropdown-text{
+   margin:10px;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: -0.08px;
+   color: #7B8E9F;
+ }
+
+ .dropdown-toggle::after {
+   content: none;
+}
+
+ .vector {
+   margin:10px;
+ }
+
+ .vector:hover {
+   width:9px;
+   height:9px;
+ }
+
+ .dropdown-toggle {
+   display: flex;
+   flex-direction: row;
+   font-size: 14px;
+   line-height: 20px;
+   letter-spacing: -0.08px;
+   color: #12344D;
+   margin:10px;
+ }
+
+ a:hover {
+   text-decoration: none;
+ }
+
+ .item-lists {
+   width: 154px;
+   height: 30px;
+   font-weight: 400;
+   font-size: 15px;
+   line-height: 18px;
+   color: #183247;
+   padding-left:20px;
+   letter-spacing: 0.5px;
+}
+
+.item-lists:hover {
+   background: #EBEFF3;
+}
