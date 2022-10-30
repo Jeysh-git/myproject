@@ -117,21 +117,27 @@ body {
    margin-left:80px;
    flex-direction: row;
 }
+// .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+//    position: relative;
+// }
 
 .item-lists:active {
    // position: absolute;
    // right: 1.5rem;
-   content: '✓';
    font-weight: 600;
  }
 
  .item-lists:hover {
    background-color: #E5F6FF;
-   content: '✓';
  }
 
  .item-lists.selected {
-   color: red;
+   color:red;
+  
+ }
+
+ .items {
+   content : '✓';
  }
 
  .dropdown-text{

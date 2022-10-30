@@ -47,53 +47,40 @@
                   4.14064C4.21095 4.21486 4.10548 4.29169 4.00001 4.29169Z" fill="#79888E"/>
                </svg>
             </dd.toggle>
-            
-               {{#dd.menu as |ddm| }}
-               
-                  {{!-- {{#each teams as |teamli|}} --}}
-                     {{#ddm.item}}
-                        <a href {{ action "sortByFields" "first_name" }}>
-                        <div class ="item-lists">First Name</div>
-                        </a>
-                        
-                     {{/ddm.item}}
-                     
-                     {{#ddm.item}}
-                        <a href {{ action "sortByFields" "last_name" }} >
-                        <div class ="item-lists"><option value = "lastname">Last Name</option></div>
-                        </a>
-                     {{/ddm.item}}
-                     {{#ddm.item}}
-                        <a href {{ action "sortByFields" "joiningDate" }}>
-                        <div class ="item-lists"><option value = "joiningdate">Joining date</option></div>
-                        </a>
-                     {{/ddm.item}}
-                     <div class="dropdown-divider"></div>
-                      {{#ddm.item}}
-                        <a href {{ action "sortByDate" }}>
-                        <div class ="item-lists">Ascending</div>
-                        </a>
-                     {{/ddm.item}}
-                      {{#ddm.item}}
-                        <a href {{ action "sortByDate" }}>
-                        <div class ="item-lists">Descending</div>
-                        </a>
-                     {{/ddm.item}}
-                     
+            {{#dd.menu as |ddm| }}
+                  {{#ddm.item}}
+                     <a href {{ action "sortByFields" "first_name" }}>
+                     <div class ="item-lists selected">First Name</div>
+                     </a>
+                  {{/ddm.item}}
+                  {{#ddm.item}}
+                     <a href {{ action "sortByFields" "last_name" }} >
+                     <div class ="item-lists"><option value = "lastname">Last Name</option></div>
+                     </a>
+                  {{/ddm.item}}
+                  {{#ddm.item}}
+                     <a href {{ action "sortByFields" "joiningDate" }}>
+                     <div class ="item-lists"><option value = "joiningdate">Joining date</option></div>
+                     </a>
+                  {{/ddm.item}}
 
-                  {{!-- {{/each}} --}}
-               {{/dd.menu}}
+                  <div class="dropdown-divider"></div>
+
+                  {{#ddm.item}}
+                     <a href {{ action "sortByFieldsInOrder" "asc"}}>
+                     <div class ="item-lists">Ascending</div>
+                     </a>
+                  {{/ddm.item}}
+                  {{#ddm.item}}
+                     <a href {{ action "sortByFieldsInOrder" "desc"}}>
+                     <div class ="item-lists">Descending</div>
+                     </a>
+                  {{/ddm.item}}
+            {{/dd.menu}}
                
          </BsDropdown>
 
-</div>
-{{!-- <div class = "search-container">
-{{input value=value
-        key-up=(action 'sortByFirstname')
-        class="light"
-        placeholder="Search By Name"}}
-{{!-- {{yield results}} --}}
-{{!-- </div> --}}
+   </div>
 </div>
 <div class="content-container">
    {{#each teamslist as |avatar|}}
@@ -101,4 +88,3 @@
    {{/each}}
    
 </div>
-{{!-- </div> --}}
