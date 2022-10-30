@@ -24,17 +24,18 @@ export default Component.extend({
         }
     }) ,
 
-    teams: computed ('members.@each.team',function(){
-        return this.members.mapBy('team').uniq()
-    }),
+    teams: computed ('members.[]',function(){
+        let teamNames =  this.members.mapBy('team').uniq();
+        teamNames.push('All Employees');
+        return teamNames;
+       
+   }),
     
     init() {
         this._super(...arguments);
-        this.teams.push('All Employees')
         this.set('selected_option','All Employees')
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
-        this.set('class','selected')
         },
 
     actions: {

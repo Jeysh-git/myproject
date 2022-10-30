@@ -7,6 +7,4 @@ export default DS.Model.extend({
     team: DS.attr('string'),
     image: DS.attr('string'),
     joiningDate: DS.attr('date'),
-
-    // team: DS.belongsTo('teams')
 });
