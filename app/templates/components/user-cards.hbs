@@ -27,17 +27,17 @@
             {{#dd.menu as |ddm| }}
                   {{#ddm.item}}
                      <a href {{ action "sortByFields" "first_name" }}>
-                     <div class ="item-lists selected">First Name</div>
+                     <div class ="item-lists {{if (compute (action "isSelectedValue" "first_name")) "selected"  }}">First Name</div>
                      </a>
                   {{/ddm.item}}
                   {{#ddm.item}}
                      <a href {{ action "sortByFields" "last_name" }} >
-                     <div class ="item-lists"><option value = "lastname">Last Name</option></div>
+                     <div class ="item-lists {{if isSelected "selected" }}"><option value = "lastname">Last Name</option></div>
                      </a>
                   {{/ddm.item}}
                   {{#ddm.item}}
                      <a href {{ action "sortByFields" "joiningDate" }}>
-                     <div class ="item-lists"><option value = "joiningdate">Joining date</option></div>
+                     <div class ="item-lists {{if isSelected "selected" }}"><option value = "joiningdate">Joining date</option></div>
                      </a>
                   {{/ddm.item}}
 
@@ -45,12 +45,12 @@
 
                   {{#ddm.item}}
                      <a href {{ action "sortByFieldsInOrder" "asc"}}>
-                     <div class ="item-lists selected">Ascending</div>
+                     <div class ="item-lists {{if isSelected "selected" ""}}">Ascending</div>
                      </a>
                   {{/ddm.item}}
                   {{#ddm.item}}
                      <a href {{ action "sortByFieldsInOrder" "desc"}}>
-                     <div class ="item-lists">Descending</div>
+                     <div class ="item-lists {{if isSelected "selected" ""}}">Descending</div>
                      </a>
                   {{/ddm.item}}
             {{/dd.menu}}

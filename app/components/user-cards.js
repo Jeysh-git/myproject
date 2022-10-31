@@ -6,9 +6,12 @@ export default Component.extend({
     selected_option:null,
     sort_option:null,
     sort_order:null,
+    isSelected:null,
+
     
     teamslist : computed ('selected_option','sort_option','sort_order',function(){
         console.log("hellooo",this.sort_order,this.sort_option);
+       // this.set('isSelected',false)
         if(this.sort_order==='asc'){
             if(this.selected_option!='All Employees')
             
@@ -36,6 +39,7 @@ export default Component.extend({
         this.set('selected_option','All Employees')
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
+
         },
 
     actions: {
@@ -45,11 +49,27 @@ export default Component.extend({
         }  ,
 
         sortByFields(field){
+            this.set(this.isSelected,field)
+            // if(!this.isSelected){
+
            this.set('sort_option',field);
+        //    if(field)
+        //    this.toggleProperty('isSelected')
+        //     }
+        //    else{
+        //     this.toggleProperty('isSelected')
+        //    }
+
+        },
+
+        isSelectedValue(field) {
+            return this.isSelected === field;
+
         },
 
         sortByFieldsInOrder(order){
             this.set('sort_order',order)
+        
         }
     }
 
