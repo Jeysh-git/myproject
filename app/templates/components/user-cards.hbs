@@ -10,7 +10,7 @@
             {{#each teams as |team|}}
                {{#ddm.item}}
                   <a href {{ action "getTeams" team }}>
-                     <div class ="item-lists">{{team}}</div>
+                     <div class ="item-lists item-droplists">{{team}}</div>
                   </a>
                {{/ddm.item}}
             {{/each}}
@@ -35,8 +35,8 @@
                <div class="dropdown-divider"></div>
                {{#each sortorderArrayList as |orderList|}}
                   {{#ddm.item}}
-                     <a href {{ action "sortByFieldsInOrder" orderList.field }}>
-                     <div class ="item-lists {{if (eq isSelectedOrder orderList.field) "selected"  }}">{{orderList.field}}</div>
+                     <a href {{ action "sortByFieldsInOrder" orderList.title }}>
+                     <div class ="item-lists {{if (eq isSelectedOrder orderList.title) "selected"  }}">{{orderList.title}}</div>
                      </a>
                   {{/ddm.item}}
                {{/each}}

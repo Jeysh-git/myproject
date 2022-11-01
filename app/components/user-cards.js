@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import EmberObject, { computed } from '@ember/object';
 
+
 export default Component.extend({
 
     selected_option:null,
@@ -40,7 +41,7 @@ export default Component.extend({
     }),
 
     sortorderArrayList:computed('sortorderlist.[]',function(){
-        return this.sortorderlist.filterBy('field')
+        return this.sortorderlist.filterBy('title')
     }),
     
     init() {
@@ -50,12 +51,13 @@ export default Component.extend({
         this.set('sortfieldList', [
             EmberObject.create({ field: 'first_name',title:'First Name' }),
             EmberObject.create({ field: 'last_name',title:'Last Name' }),
-            EmberObject.create({ field: 'joiningDate',title:'Joining Date' }),
+            EmberObject.create({ field: 'joiningDate',title:'Joining Date' })
+            
           ]);
 
         this.set('sortorderlist', [
-            EmberObject.create({ field: 'Ascending' }),
-            EmberObject.create({ field: 'Descending' }),
+            EmberObject.create({ title: 'Ascending' }),
+            EmberObject.create({ title: 'Descending' }),
           ]);
 
         this.set('sort_option','first_name')
