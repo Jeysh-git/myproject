@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import EmberObject, { computed } from '@ember/object';
 
 export default Component.extend({
 
@@ -7,12 +7,13 @@ export default Component.extend({
     sort_option:null,
     sort_order:null,
     isSelected:null,
-
+    isSelectedOrder:null,
+    sortfieldList:null,
+    sortorderlist:null,
     
     teamslist : computed ('selected_option','sort_option','sort_order',function(){
-        console.log("hellooo",this.sort_order,this.sort_option);
-       // this.set('isSelected',false)
-        if(this.sort_order==='asc'){
+    
+        if(this.sort_order==='Ascending'){
             if(this.selected_option!='All Employees')
             
                 return this.get('members').filterBy('team',this.get('selected_option')).sortBy(this.get('sort_option'))
@@ -32,13 +33,35 @@ export default Component.extend({
         teamNames.push('All Employees');
         return teamNames;
        
-   }),
+    }),
+
+    sortfieldArrayList: computed('sortfieldList.[]',function(){
+        return this.sortfieldList.filterBy('title')
+    }),
+
+    sortorderArrayList:computed('sortorderlist.[]',function(){
+        return this.sortorderlist.filterBy('field')
+    }),
     
     init() {
         this._super(...arguments);
         this.set('selected_option','All Employees')
+
+        this.set('sortfieldList', [
+            EmberObject.create({ field: 'first_name',title:'First Name' }),
+            EmberObject.create({ field: 'last_name',title:'Last Name' }),
+            EmberObject.create({ field: 'joiningDate',title:'Joining Date' }),
+          ]);
+
+        this.set('sortorderlist', [
+            EmberObject.create({ field: 'Ascending' }),
+            EmberObject.create({ field: 'Descending' }),
+          ]);
+
         this.set('sort_option','first_name')
-        this.set('sort_order','asc')
+        this.set('sort_order','Ascending')
+        this.set('isSelected','first_name');
+        this.set('isSelectedOrder','Ascending')
 
         },
 
@@ -49,25 +72,12 @@ export default Component.extend({
         }  ,
 
         sortByFields(field){
-            this.set(this.isSelected,field)
-            // if(!this.isSelected){
-
-           this.set('sort_option',field);
-        //    if(field)
-        //    this.toggleProperty('isSelected')
-        //     }
-        //    else{
-        //     this.toggleProperty('isSelected')
-        //    }
-
-        },
-
-        isSelectedValue(field) {
-            return this.isSelected === field;
-
+            this.set('isSelected',field)
+            this.set('sort_option',field);
         },
 
         sortByFieldsInOrder(order){
+            this.set('isSelectedOrder',order)
             this.set('sort_order',order)
         
         }
