@@ -7,41 +7,33 @@ export default Component.extend({
     selected_option:null,
     sort_option:null,
     sort_order:null,
-    isSelected:null,
-    isSelectedOrder:null,
     sortfieldList:null,
     sortorderlist:null,
     
     teamslist : computed ('selected_option','sort_option','sort_order',function(){
+
+        let teamlistArray = this.get('members').filterBy('team',this.get('selected_option')).sortBy(this.get('sort_option'));
+        let allteamlistArray = this.get('members').filterBy('team').sortBy(this.get('sort_option'))
     
         if(this.sort_order==='Ascending'){
             if(this.selected_option!='All Employees')
-            
-                return this.get('members').filterBy('team',this.get('selected_option')).sortBy(this.get('sort_option'))
+                return teamlistArray;
             else
-                return this.get('members').filterBy('team').sortBy(this.get('sort_option'))
+                return allteamlistArray;
         }
         else {
             if(this.selected_option!='All Employees')
-                return this.get('members').filterBy('team',this.get('selected_option')).sortBy(this.get('sort_option')).reverse()
+                return teamlistArray.sort((item1, item2) => (item1 > item2 ? -1 : 1))
             else
-                return this.get('members').filterBy('team').sortBy(this.get('sort_option')).reverse()
+                return allteamlistArray.sort((item1, item2) => (item1 > item2 ? -1 : 1))
         }
     }) ,
 
     teams: computed ('members.[]',function(){
         let teamNames =  this.members.mapBy('team').uniq();
-        teamNames.push('All Employees');
-        return teamNames;
+        let item = "All Employees";
+        return [item].concat(teamNames);
        
-    }),
-
-    sortfieldArrayList: computed('sortfieldList.[]',function(){
-        return this.sortfieldList.filterBy('title')
-    }),
-
-    sortorderArrayList:computed('sortorderlist.[]',function(){
-        return this.sortorderlist.filterBy('title')
     }),
     
     init() {
@@ -56,16 +48,14 @@ export default Component.extend({
           ]);
 
         this.set('sortorderlist', [
-            EmberObject.create({ title: 'Ascending' }),
-            EmberObject.create({ title: 'Descending' }),
+            EmberObject.create({ field:'asc',title: 'Ascending' }),
+            EmberObject.create({ field:'desc',title: 'Descending' }),
           ]);
 
         this.set('sort_option','first_name')
         this.set('sort_order','Ascending')
-        this.set('isSelected','first_name');
-        this.set('isSelectedOrder','Ascending')
 
-        },
+    },
 
     actions: {
         
@@ -74,12 +64,10 @@ export default Component.extend({
         }  ,
 
         sortByFields(field){
-            this.set('isSelected',field)
             this.set('sort_option',field);
         },
 
         sortByFieldsInOrder(order){
-            this.set('isSelectedOrder',order)
             this.set('sort_order',order)
         
         }

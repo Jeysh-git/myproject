@@ -25,18 +25,18 @@
                {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
             </dd.toggle>
             {{#dd.menu as |ddm| }}
-               {{#each sortfieldArrayList as |fieldList|}}
+               {{#each sortfieldList as |fieldList|}}
                   {{#ddm.item}}
                      <a href {{ action "sortByFields" fieldList.field }}>
-                     <div class ="item-lists {{if (eq isSelected fieldList.field) "selected"  }}">{{fieldList.title}}</div>
+                     <div class ="item-lists {{if (eq sort_option fieldList.field) "selected"  }}">{{fieldList.title}}</div>
                      </a>
                   {{/ddm.item}}
                {{/each}}
                <div class="dropdown-divider"></div>
-               {{#each sortorderArrayList as |orderList|}}
+               {{#each sortorderlist as |orderList|}}
                   {{#ddm.item}}
                      <a href {{ action "sortByFieldsInOrder" orderList.title }}>
-                     <div class ="item-lists {{if (eq isSelectedOrder orderList.title) "selected"  }}">{{orderList.title}}</div>
+                     <div class ="item-lists {{if (eq sort_order orderList.title) "selected"  }}">{{orderList.title}}</div>
                      </a>
                   {{/ddm.item}}
                {{/each}}
