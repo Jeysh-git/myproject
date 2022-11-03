@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import EmberObject, { computed } from '@ember/object';
+import EmberObject, { computed,get } from '@ember/object';
 
 
 export default Component.extend({
@@ -12,20 +12,25 @@ export default Component.extend({
     
     teamslist : computed ('selected_option','sort_option','sort_order',function(){
 
-        let teamlistArray = this.get('members').filterBy('team',this.get('selected_option')).sortBy(this.get('sort_option'));
-        let allteamlistArray = this.get('members').filterBy('team').sortBy(this.get('sort_option'))
+        let teamlistArray = this.get('members').filterBy('team',this.get('selected_option'));
+        let allteamlistArray = this.get('members').filterBy('team')
+        let sortoption = this.get('sort_option')
     
-        if(this.sort_order==='Ascending'){
+        if(this.sort_order==='asc'){
             if(this.selected_option!='All Employees')
-                return teamlistArray;
+                return teamlistArray.sortBy(sortoption)
             else
-                return allteamlistArray;
+                return allteamlistArray.sortBy(sortoption);
         }
         else {
-            if(this.selected_option!='All Employees')
-                return teamlistArray.sort((item1, item2) => (item1 > item2 ? -1 : 1))
-            else
-                return allteamlistArray.sort((item1, item2) => (item1 > item2 ? -1 : 1))
+            if(this.selected_option!='All Employees'){
+            return teamlistArray.sort(
+                (p1, p2) => (get(p1,sortoption) < get(p2,sortoption)) ? 1 : (get(p1,sortoption) > get(p2,sortoption)) ? -1 : 0);
+            }
+            else{
+            return allteamlistArray.sort(
+                (p1, p2) => (get(p1,sortoption) < get(p2,sortoption)) ? 1 : (get(p1,sortoption) > get(p2,sortoption)) ? -1 : 0);
+            }
         }
     }) ,
 
@@ -53,7 +58,7 @@ export default Component.extend({
           ]);
 
         this.set('sort_option','first_name')
-        this.set('sort_order','Ascending')
+        this.set('sort_order','asc')
 
     },
 

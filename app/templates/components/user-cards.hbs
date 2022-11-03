@@ -6,15 +6,15 @@
          <dd.toggle><div class ="option-text"> {{this.selected_option}} </div>
             {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
          </dd.toggle>
-         {{#dd.menu as |ddm|}}
+         <dd.menu as |ddm|>
             {{#each teams as |team|}}
-               {{#ddm.item}}
+               <ddm.item>
                   <a href {{ action "getTeams" team }}>
                      <div class ="item-lists item-droplists">{{team}}</div>
                   </a>
-               {{/ddm.item}}
+               </ddm.item>
             {{/each}}
-         {{/dd.menu}}
+         </dd.menu>
       </BsDropdown>
    </div>
 
@@ -24,24 +24,24 @@
             <dd.toggle><div class ="option-text">Options </div>
                {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
             </dd.toggle>
-            {{#dd.menu as |ddm| }}
+             <dd.menu as |ddm|>
                {{#each sortfieldList as |fieldList|}}
-                  {{#ddm.item}}
+                  <ddm.item>
                      <a href {{ action "sortByFields" fieldList.field }}>
                      <div class ="item-lists {{if (eq sort_option fieldList.field) "selected"  }}">{{fieldList.title}}</div>
                      </a>
-                  {{/ddm.item}}
+                  </ddm.item>
                {{/each}}
                <div class="dropdown-divider"></div>
                {{#each sortorderlist as |orderList|}}
-                  {{#ddm.item}}
-                     <a href {{ action "sortByFieldsInOrder" orderList.title }}>
-                     <div class ="item-lists {{if (eq sort_order orderList.title) "selected"  }}">{{orderList.title}}</div>
+                  <ddm.item>
+                     <a href {{ action "sortByFieldsInOrder" orderList.field }}>
+                     <div class ="item-lists {{if (eq sort_order orderList.field) "selected"  }}">{{orderList.title}}</div>
                      </a>
-                  {{/ddm.item}}
+                  </ddm.item>
                {{/each}}
                  
-            {{/dd.menu}}
+            </dd.menu>
                
          </BsDropdown>
 
