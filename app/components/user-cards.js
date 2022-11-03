@@ -25,11 +25,11 @@ export default Component.extend({
         else {
             if(this.selected_option!='All Employees'){
             return teamlistArray.sort(
-                (p1, p2) => (get(p1,sortoption) < get(p2,sortoption)) ? 1 : (get(p1,sortoption) > get(p2,sortoption)) ? -1 : 0);
+                (item1, item2) => (get(item1,sortoption) < get(item2,sortoption)) ? 1 : (get(item1,sortoption) > get(item2,sortoption)) ? -1 : 0);
             }
             else{
             return allteamlistArray.sort(
-                (p1, p2) => (get(p1,sortoption) < get(p2,sortoption)) ? 1 : (get(p1,sortoption) > get(p2,sortoption)) ? -1 : 0);
+                (item1, item2) => (get(item1,sortoption) < get(item2,sortoption)) ? 1 : (get(item1,sortoption) > get(item2,sortoption)) ? -1 : 0);
             }
         }
     }) ,
