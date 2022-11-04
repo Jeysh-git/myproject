@@ -21,7 +21,7 @@
    <div class = "dropdown-container">
       <div class = "dropdown-text">Sort By</div>
          <BsDropdown @closeOnMenuClick={{false}} as |dd|>    
-            <dd.toggle><div class ="option-text">Options </div>
+            <dd.toggle><div class ="option-text">{{this.sort_title}} </div>
                {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
             </dd.toggle>
              <dd.menu as |ddm|>

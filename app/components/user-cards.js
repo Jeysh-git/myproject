@@ -9,6 +9,7 @@ export default Component.extend({
     sort_order:null,
     sortfieldList:null,
     sortorderlist:null,
+    sort_title:null,
     
     teamslist : computed ('selected_option','sort_option','sort_order',function(){
 
@@ -59,6 +60,7 @@ export default Component.extend({
 
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
+        this.set('sort_title','First Name')
 
     },
 
@@ -70,6 +72,12 @@ export default Component.extend({
 
         sortByFields(field){
             this.set('sort_option',field);
+            const title = new Map([
+               [ 'first_name' , "First Name"],
+               ["last_name","Last Name"],
+               ["joiningDate","Joining Date"]
+            ])
+            this.set('sort_title',title.get(field))
         },
 
         sortByFieldsInOrder(order){
