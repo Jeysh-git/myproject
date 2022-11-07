@@ -46,10 +46,26 @@
          </BsDropdown>
 
       </div>
-</div>
+      <div class ="search-container">
+         <form>
+            {{input value=search
+               key-up=(action 'searchEmployeeName')
+               class="font-style light"
+               type = "search"
+               placeholder="Search By Name"}}
+         </form>
+      </div>
+   </div>
 <div class="content-container">
+
    {{#each teamslist as |avatar|}}
       {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
+      {{else}}
+         <div class="nodata">
+            <div class = "nodataImage">{{svg-jar 'employees' height='96px' }}</div>
+            <div class = "nodatamessage1 font-family">No employees to list in this view </div>
+            <div class = "nodatamessage2 font-family">Try looking for something less specific</div>
+         </div>
    {{/each}}
    
 </div>

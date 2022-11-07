@@ -3,71 +3,71 @@ import Route from '@ember/routing/route';
 export default Route.extend({
     // beforeModel(){
     //     let users = [{
-    //       first_name: 'aaa',
-    //       last_name: 'aa',
+    //       first_name: 'Anuja',
+    //       last_name: 'karthik',
     //       email: 'aaa@gmail.com',
     //       team: 'Freshteam1',
     //       image : 'images/avatar.png',
     //       joiningDate: '2020-07-01'
     //     },  {
-    //       first_name: 'ccc',
-    //       last_name: 'cc',
+    //       first_name: 'Banu',
+    //       last_name: 'rekha',
     //       email: 'ccc@gmail.com',
     //       team: 'Freshteam3',
     //       image:'',
     //       joiningDate: '2020-07-04'  
     //     }, {
-    //       first_name: 'ddd',
-    //       last_name: 'dd',
+    //       first_name: 'Chitra',
+    //       last_name: 'ganesh',
     //       email: 'ddd@gmail.com',
     //       team: 'Freshteam4',
     //       image:'',
     //       joiningDate: '2020-07-05'
     //     }, {
-    //       first_name: 'eee',
-    //       last_name: 'ee',
+    //       first_name: 'Dinesh',
+    //       last_name: 'kumar',
     //       email: 'eee@gmail.com',
     //       team: 'Freshteam1',
     //       image:'',
     //       joiningDate: '2020-07-06'
     //     }, {
-    //       first_name: 'fff',
-    //       last_name: 'ff',
+    //       first_name: 'Aarathy',
+    //       last_name: 'selvaraj',
     //       email: 'fff@gmail.com',
     //       team: 'Freshteam2',
     //       image: '',
     //       joiningDate: '2020-07-01'
     //     }, {
-    //       first_name: 'ggg',
-    //       last_name: 'gg',
+    //       first_name: 'Shankar',
+    //       last_name: 'ganesh',
     //       email: 'ggg@gmail.com',
     //       team: 'Freshteam2',
     //       image:'',
     //       joiningDate: '2020-07-07'
     //     }, {
-    //       first_name: 'hhh',
-    //       last_name: 'hh',
+    //       first_name: 'Yogesh',
+    //       last_name: 'prabu',
     //       email: 'hhh@gmail.com',
     //       team: 'Freshteam3',
     //       image:'',
     //       joiningDate: '2020-07-05'
     //     }, {
-    //       first_name: 'iii',
-    //       last_name: 'ii',
+    //       first_name: 'Nivetha',
+    //       last_name: 'yogesh',
     //       email: 'iii@gmail.com',
     //       team: 'Freshteam4',
     //       image:'',
     //       joiningDate: '2020-07-07'
     //     }, {
-    //       first_name: 'jjj',
-    //       last_name: 'jj',
+    //       first_name: 'Saanvi',
+    //       last_name: 'shankar',
     //       email: 'jjj@gmail.com',
     //       team: 'Freshteam4',
     //       image:'',
     //       joiningDate: '2020-07-07'
     //     }, {
-    //       first_name: 'hhh',
-    //       last_name: 'hh',
+    //       first_name: 'Dheeran',
+    //       last_name: 'kumar',
     //       email: 'hhh@gmail.com',
     //       team: 'Freshteam3',
     //       image:'',
