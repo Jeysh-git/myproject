@@ -46,13 +46,17 @@
          </BsDropdown>
 
       </div>
+      
       <div class ="search-container">
+      
          <form>
+         
             {{input value=search
                key-up=(action 'searchEmployeeName')
                class="font-style light"
                type = "search"
                placeholder="Search By Name"}}
+                <div class="searchiconImage"> {{svg-jar 'Normal' height='15px' }}</div>
          </form>
       </div>
    </div>

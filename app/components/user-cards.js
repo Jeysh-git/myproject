@@ -30,24 +30,39 @@ export default Component.extend({
         else {
             if(this.selected_option!='All Employees'){
             return teamlistArray.sort(
-                (item1, item2) => (get(item1,sortoption) < get(item2,sortoption)) ? 1 : (get(item1,sortoption) > get(item2,sortoption)) ? -1 : 0);
+                (item1, item2) =>this.sortEmployeesByDescOrder(item1,item2,sortoption));
             }
             else{
             return allteamlistArray.sort(
-                (item1, item2) => (get(item1,sortoption) < get(item2,sortoption)) ? 1 : (get(item1,sortoption) > get(item2,sortoption)) ? -1 : 0);
+                (item1, item2) =>this.sortEmployeesByDescOrder(item1,item2,sortoption));
             }
         }}
         else {
-            return allteamlistArray.filter((element)=> {
+            if(this.sort_order==='asc'){
+            return allteamlistArray.sortBy(sortoption).filter((element)=> {
                 if((get(element,'fullName')).toLowerCase().startsWith(this.displaysearch.toLowerCase())  || 
                 (get(element,'last_name')).toLowerCase().startsWith(this.displaysearch.toLowerCase()) ){
                    return element;
              }
-             else {
-                return false;
+                else {
+                    return false;
              }
             });
-            
+        }
+
+            else {
+                return allteamlistArray.sort((item1,item2)=>this.sortEmployeesByDescOrder(item1,item2,sortoption)).
+                    filter((element)=> {
+                    if((get(element,'fullName')).toLowerCase().startsWith(this.displaysearch.toLowerCase())  || 
+                    (get(element,'last_name')).toLowerCase().startsWith(this.displaysearch.toLowerCase()) ){
+                       return element;
+                 }
+                    else {
+                        return false;
+                 }
+                });
+
+            }
         }
     }) ,
 
@@ -78,7 +93,6 @@ export default Component.extend({
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
         this.set('sort_title','First Name')
-
     },
 
     searchByEmployeeName(){
@@ -90,6 +104,12 @@ export default Component.extend({
         }
         },   
 
+    sortEmployeesByDescOrder(element1,element2,option){
+       return (get(element1,option) < get(element2,option)) ? 1 : (get(element1,option) > 
+            get(element2,option)) ? -1 : 0
+        
+    },
+
     actions: {
         
         getTeams(teamName) {
@@ -98,12 +118,8 @@ export default Component.extend({
 
         sortByFields(field){
             this.set('sort_option',field);
-            const title = new Map([
-               [ 'first_name' , "First Name"],
-               ["last_name","Last Name"],
-               ["joiningDate","Joining Date"]
-            ])
-            this.set('sort_title',title.get(field))
+            let option = this.sortfieldList.find(item => item.field === field);
+            this.set('sort_title',option.title)
         },
 
         sortByFieldsInOrder(order){
