@@ -17,7 +17,7 @@ export default Component.extend({
     teamslist : computed ('selected_option','sort_option','sort_order','displaysearch',function(){
 
         let teamlistArray = this.get('members').filterBy('team',this.get('selected_option'));
-        let allteamlistArray = this.get('members').filterBy('team')
+        let allteamlistArray = this.get('members')
         let sortoption = this.get('sort_option')
     
         if(this.selected_option!='All Employees'){
@@ -58,7 +58,9 @@ export default Component.extend({
     },
 
     searchByEmployeeName(){
+      
         if (this.search !== '') {
+            console.log("helleloooo",this.search)
             this.set('displaysearch',this.search);
             }
         else {

@@ -52,9 +52,10 @@
          <form>
          
             {{input value=search
-               key-up=(action 'searchEmployeeName')
-               class="font-style light"
                type = "search"
+               key-up=(action 'searchEmployeeName')
+               click=(action 'searchEmployeeName')
+               class="font-style light" 
                placeholder="Search By Name"}}
                 <div class="searchiconImage"> {{svg-jar 'Normal' height='15px' }}</div>
          </form>
