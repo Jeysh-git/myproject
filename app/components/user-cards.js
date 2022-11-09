@@ -21,48 +21,13 @@ export default Component.extend({
         let sortoption = this.get('sort_option')
     
         if(this.displaysearch==null){
-        if(this.sort_order==='asc'){
             if(this.selected_option!='All Employees')
-                return teamlistArray.sortBy(sortoption)
+                return this.sortEmployeeList(teamlistArray,this.sort_order,sortoption)
             else
-                return allteamlistArray.sortBy(sortoption);
+                return this.sortEmployeeList(allteamlistArray,this.sort_order,sortoption)
         }
         else {
-            if(this.selected_option!='All Employees'){
-            return teamlistArray.sort(
-                (item1, item2) =>this.sortEmployeesByDescOrder(item1,item2,sortoption));
-            }
-            else{
-            return allteamlistArray.sort(
-                (item1, item2) =>this.sortEmployeesByDescOrder(item1,item2,sortoption));
-            }
-        }}
-        else {
-            if(this.sort_order==='asc'){
-            return allteamlistArray.sortBy(sortoption).filter((element)=> {
-                if((get(element,'fullName')).toLowerCase().startsWith(this.displaysearch.toLowerCase())  || 
-                (get(element,'last_name')).toLowerCase().startsWith(this.displaysearch.toLowerCase()) ){
-                   return element;
-             }
-                else {
-                    return false;
-             }
-            });
-        }
-
-            else {
-                return allteamlistArray.sort((item1,item2)=>this.sortEmployeesByDescOrder(item1,item2,sortoption)).
-                    filter((element)=> {
-                    if((get(element,'fullName')).toLowerCase().startsWith(this.displaysearch.toLowerCase())  || 
-                    (get(element,'last_name')).toLowerCase().startsWith(this.displaysearch.toLowerCase()) ){
-                       return element;
-                 }
-                    else {
-                        return false;
-                 }
-                });
-
-            }
+            return this.sortEmployeeList(allteamlistArray,this.sort_order,sortoption).filter((element)=> this.filterArrayElements(element,this.displaysearch))
         }
     }) ,
 
@@ -102,14 +67,33 @@ export default Component.extend({
         else {
             this.set('displaysearch',null);
         }
-        },   
+    },   
 
-    sortEmployeesByDescOrder(element1,element2,option){
-       return (get(element1,option) < get(element2,option)) ? 1 : (get(element1,option) > 
-            get(element2,option)) ? -1 : 0
-        
+    filterArrayElements(arrayItems,search){
+
+            if((get(arrayItems,'fullName')).toLowerCase().startsWith(search.toLowerCase())  || 
+            (get(arrayItems,'last_name')).toLowerCase().startsWith(search.toLowerCase()) ){
+               return arrayItems;
+         }
+            else {
+                return false;
+         }
     },
 
+    sortEmployeeList(arrayName,order,option){
+        
+        if(order=='asc'){
+            return arrayName.sortBy(option)
+        }
+        else {
+            return arrayName.sort(
+                (item1, item2) =>{(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
+                    get(item2,option)) ? -1 : 0});
+
+        }
+
+    },
+    
     actions: {
         
         getTeams(teamName) {
