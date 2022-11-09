@@ -21,7 +21,7 @@
    <div class = "dropdown-container">
       <div class = "dropdown-text">Sort By</div>
          <BsDropdown @closeOnMenuClick={{false}} as |dd|>    
-            <dd.toggle><div class ="option-text">Options </div>
+            <dd.toggle><div class ="option-text">{{this.sort_title}} </div>
                {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
             </dd.toggle>
              <dd.menu as |ddm|>
@@ -46,10 +46,31 @@
          </BsDropdown>
 
       </div>
-</div>
+      
+      <div class ="search-container">
+      
+         <form>
+         
+            {{input value=search
+               type = "search"
+               key-up=(action 'searchEmployeeName')
+               click=(action 'searchEmployeeName')
+               class="font-style light" 
+               placeholder="Search By Name"}}
+                <div class="searchiconImage"> {{svg-jar 'Normal' height='15px' }}</div>
+         </form>
+      </div>
+   </div>
 <div class="content-container">
+
    {{#each teamslist as |avatar|}}
       {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
+      {{else}}
+         <div class="nodata">
+            <div class = "nodataImage">{{svg-jar 'employees' height='96px' }}</div>
+            <div class = "nodatamessage1 font-family">No employees to list in this view </div>
+            <div class = "nodatamessage2 font-family">Try looking for something less specific</div>
+         </div>
    {{/each}}
    
 </div>
