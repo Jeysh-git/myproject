@@ -60,7 +60,6 @@ export default Component.extend({
     searchByEmployeeName(){
       
         if (this.search !== '') {
-            console.log("helleloooo",this.search)
             this.set('displaysearch',this.search);
             }
         else {
