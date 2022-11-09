@@ -20,14 +20,11 @@ export default Component.extend({
         let allteamlistArray = this.get('members').filterBy('team')
         let sortoption = this.get('sort_option')
     
-        if(this.displaysearch==null){
-            if(this.selected_option!='All Employees')
-                return this.sortEmployeeList(teamlistArray,this.sort_order,sortoption)
-            else
-                return this.sortEmployeeList(allteamlistArray,this.sort_order,sortoption)
-        }
-        else {
-            return this.sortEmployeeList(allteamlistArray,this.sort_order,sortoption).filter((element)=> this.filterArrayElements(element,this.displaysearch))
+        if(this.selected_option!='All Employees'){
+            return this.sortEmployeeList(teamlistArray,this.sort_order,sortoption,this.displaysearch)
+        }   
+        else{
+            return this.sortEmployeeList(allteamlistArray,this.sort_order,sortoption,this.displaysearch)
         }
     }) ,
 
@@ -80,15 +77,27 @@ export default Component.extend({
          }
     },
 
-    sortEmployeeList(arrayName,order,option){
+    sortEmployeeList(arrayName,order,option,searchemployee){
         
         if(order=='asc'){
+            if(searchemployee!=null){
+               return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sortBy(option)
+            }
+            else
             return arrayName.sortBy(option)
+
         }
         else {
+            if(searchemployee!=null){
+                return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sort(
+                    (item1, item2) =>(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
+                        get(item2,option)) ? -1 : 0);
+            }
+            else{
             return arrayName.sort(
-                (item1, item2) =>{(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
-                    get(item2,option)) ? -1 : 0});
+                (item1, item2) =>(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
+                    get(item2,option)) ? -1 : 0);
+            }
 
         }
 
