@@ -67,40 +67,26 @@ export default Component.extend({
     },   
 
     filterArrayElements(arrayItems,search){
-
+        if(search!=null){
             if((get(arrayItems,'fullName')).toLowerCase().startsWith(search.toLowerCase())  || 
-            (get(arrayItems,'last_name')).toLowerCase().startsWith(search.toLowerCase()) ){
-               return arrayItems;
-         }
-            else {
-                return false;
-         }
+                (get(arrayItems,'last_name')).toLowerCase().startsWith(search.toLowerCase()) ){
+                return arrayItems;
+            }
+        }
+        else {
+            return arrayItems;
+        }
     },
 
     sortEmployeeList(arrayName,order,option,searchemployee){
-        
         if(order=='asc'){
-            if(searchemployee!=null){
-               return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sortBy(option)
-            }
-            else
-            return arrayName.sortBy(option)
-
+            return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sortBy(option)
         }
-        else {
-            if(searchemployee!=null){
-                return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sort(
-                    (item1, item2) =>(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
-                        get(item2,option)) ? -1 : 0);
-            }
-            else{
-            return arrayName.sort(
+        else {   
+            return arrayName.filter((element)=> this.filterArrayElements(element,searchemployee)).sort(
                 (item1, item2) =>(get(item1,option) < get(item2,option)) ? 1 : (get(item1,option) > 
-                    get(item2,option)) ? -1 : 0);
+                get(item2,option)) ? -1 : 0);
             }
-
-        }
-
     },
     
     actions: {
