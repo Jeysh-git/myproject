@@ -84,6 +84,7 @@ body {
    background-color: #ffffff;
    display:flex;
    background: #F5F7F9;
+   justify-content: space-between;
  }
 
  .subheader-text{
@@ -91,6 +92,8 @@ body {
    font-size: 14px;
    line-height: 18px;
    align-self: center;
+   width: 112px;
+height: 22px;
  }
 
  .content-container {
@@ -194,6 +197,7 @@ body {
    display: flex;
    flex-direction:row;
    width:fit-content;
+ 
  }
 
  .dropdown-container {
@@ -323,10 +327,77 @@ input.light {
 
  }
 
+ .employee-button {
+   width: 119px;
+   height: 30px;
+   background-color: #fff;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 18px;
+   margin:10px;
+   margin-right:30px;
+
+ }
+
+ .bsheader {
+   border:none;
+   display: flex;
+   //justify-content: space-around;
+ }
+
+ .bsheadertext {
+   margin:10px;
+   margin-left:25px;
+   font-size: 16px;
+   line-height: 22px;
+   font-weight: 400;
+ }
+
+ .buttons {
+   margin:10px;
+   margin-left:200px;
+   display: flex;
+   
+ }
+
+ .btn-secondary {
+   color: #000;
+   background-color: transparent; 
+    border-color:transparent
+}
+
+ .menus {
+   padding:10px;
+   font-weight: 400;
+   align-items: center;
+ }
+
+ .menus:hover {
+   background-color: #264966;
+ }
+
+.modal-dialog {
+   margin-top: 0px;
+   margin-right:0px;
+   height:100%;
+   background-color: #fff;
+  
+}
+
+.modal-content {
+   height:100%;   
+  
+}
+
+.modal .fade .show {
+transform: translate(-2.1rem, -2ex);
+transition: linear;
 
 
 
+}
 
- 
-
-
+.fade {
+   background-color: #12344D;
+   opacity: 0.8;
+}

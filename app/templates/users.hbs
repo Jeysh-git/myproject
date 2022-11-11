@@ -4,6 +4,9 @@
         <div class = "count-text">
             Total Employees: {{model.length}}
         </div>
+        {{#link-to "users.new"}}
+        <button class = "employee-button">Add Employee</button>
+        {{/link-to}}
 
     </div>
     <div class="cards-container">
