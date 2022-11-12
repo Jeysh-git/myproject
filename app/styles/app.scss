@@ -3,6 +3,12 @@
 @import "fontstyle";
 
 
+@mixin animation($animation) {
+   -webkit-animation: $animation;
+        -o-animation: $animation;
+           animation: $animation;
+ }
+
 $body-color: #e5e5e5;
 $leftnav-color :#12344d ;
 
@@ -339,65 +345,71 @@ input.light {
 
  }
 
- .bsheader {
-   border:none;
-   display: flex;
-   //justify-content: space-around;
- }
-
- .bsheadertext {
-   margin:10px;
-   margin-left:25px;
-   font-size: 16px;
-   line-height: 22px;
-   font-weight: 400;
- }
-
- .buttons {
-   margin:10px;
-   margin-left:200px;
-   display: flex;
-   
- }
-
- .btn-secondary {
-   color: #000;
-   background-color: transparent; 
-    border-color:transparent
-}
-
- .menus {
-   padding:10px;
-   font-weight: 400;
-   align-items: center;
- }
-
- .menus:hover {
-   background-color: #264966;
- }
-
-.modal-dialog {
-   margin-top: 0px;
-   margin-right:0px;
+ .slide-container0 {
+   right:0;
+   top:0;
+   position: absolute;
+   width: 100%;
    height:100%;
-   background-color: #fff;
-  
-}
-
-.modal-content {
-   height:100%;   
-  
-}
-
-.modal .fade .show {
-transform: translate(-2.1rem, -2ex);
-transition: linear;
-
-
+   z-index: 10;
+   
+   opacity:1 ;
+   display: flex;
+   justify-content: space-around;
+   @include animation(slide-modal .1s 1);
 
 }
 
-.fade {
-   background-color: #12344D;
-   opacity: 0.8;
+.outerslide{
+   
+   background: #12344D;
+   opacity: 0.3;
+   flex-grow: 2;
+   
 }
+
+.slide2 {
+   flex-grow: 1;
+   background-color: #fff;  
+}
+
+.slideheader {
+   margin:10px;
+   margin-left: 15px;
+   justify-content: space-between;
+}
+
+.buttons {
+   display: flex;
+}
+
+.headertext {
+   padding: 10px;
+}
+
+.button1 {
+   padding: 10px;
+   font-weight: 400;
+}
+
+.button1:hover {
+   background:#12344D ;
+   color: #fff;
+}
+
+@keyframes slide-modal {
+   from {
+     right:-400px;
+ 
+     opacity: 0;
+   }
+ 
+   to {
+     right:0;
+ 
+     opacity: 1;
+   }
+ }
+
+
+

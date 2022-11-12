@@ -83,6 +83,8 @@ export default Route.extend({
     //     });
     // }
       model(){
-        return this.store.findAll('user') ;
+        return this.store.findAll('user').then(results => results.filter((user)=>{
+          return user.get('isNew')==false
+        }))
       }
-});
+})
