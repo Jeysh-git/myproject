@@ -3,7 +3,6 @@ import EmberObject from '@ember/object';
 
 export default Component.extend({
 
-    title:'Add Employee',
     formbuttons:null,
 
     init(){
