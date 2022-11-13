@@ -153,6 +153,7 @@ height: 22px;
 .logoimg {
    opacity: 0.5;
    margin:15px;
+   background: transparent;
 }
 
 .header{
@@ -345,7 +346,7 @@ input.light {
 
  }
 
- .slide-container0 {
+ .add-employee-slide-container {
    right:0;
    top:0;
    position: absolute;
@@ -357,44 +358,42 @@ input.light {
    display: flex;
    justify-content: space-around;
    @include animation(slide-modal .1s 1);
+ 
+   .add-employee-outerslide{ 
+      background: #12344D;
+      opacity: 0.3;
+      width: 45%;   
+   }
 
-}
-
-.outerslide{
-   
-   background: #12344D;
-   opacity: 0.3;
-   flex-grow: 2;
-   
-}
-
-.slide2 {
-   flex-grow: 1;
-   background-color: #fff;  
-}
-
+   .add-employee-slide {
+      width: 55%;
+      background-color: #fff;  
+   }
+ }
+ 
 .slideheader {
    margin:10px;
    margin-left: 15px;
    justify-content: space-between;
 }
 
-.buttons {
+.add-employee-slide-btns {
    display: flex;
+
+   .apply-btn,.reset-btn {
+      padding: 10px;
+      font-weight: 400;
+   }
+
+   .apply-btn:hover, .reset-btn:hover {
+      background:#12344D ;
+      color: #fff;
+   }
+
 }
 
-.headertext {
+.slide-headertext {
    padding: 10px;
-}
-
-.button1 {
-   padding: 10px;
-   font-weight: 400;
-}
-
-.button1:hover {
-   background:#12344D ;
-   color: #fff;
 }
 
 @keyframes slide-modal {

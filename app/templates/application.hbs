@@ -1,7 +1,7 @@
 <div class="navbar-left">
     <nav>
         <div class = "leftbar-logo">
-            <img class="logoimg" src="images/favicon.ico" width="25px" height="25px">
+            <div class="logoimg">{{svg-jar 'logo' width='25px' height="25px"}}</div> 
         </div>
         <div class = "users-logo">
             {{#link-to "users" class="users-button"}}
@@ -12,8 +12,7 @@
 </div>
 
 <div class="header">
-    {{!-- <img class = "headerimg" src ="images/brand-header-logo.png" width="34px" height="34px"> --}}
-    <div class="headerimg"> {{svg-jar 'candidates' width='34px' }}</div>
+    <div class="headerimg"> {{svg-jar 'logo' width='34px' height="34px"}}</div>
     <div class="header-text">Talent Center</div>
 </div>
   {{outlet}}  

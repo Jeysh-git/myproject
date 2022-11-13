@@ -1,14 +1,13 @@
 
 {{!-- {{yield}} --}}
 <div class="avatar-container" style = "background-color: {{colorpicker (initial title)}}">
-    {{#if imm}}
+    {{#if empImage}}
     <div class = "employee-image">
-        <img src="{{imm}}" width = "80px" height="80px">
+        {{svg-jar empImage height="80px" border-radius="50px"}}
         </div>
     {{else}}
         <div class="employee-initial" >
              {{initial title}} 
         </div>
     {{/if}}
-    {{!-- {{outlet}} --}}
 </div>
