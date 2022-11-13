@@ -4,8 +4,10 @@
     <div class = "header slideheader">
       <div class="slide-headertext">{{title}}</div>
       <div class="employee-slide-btns">
-        <div class="apply-btn">{{savebutton}}</div>
-        <div class="reset-btn">{{resetbutton}}</div>
+        {{#each form-btns as |btn|}}
+
+        <div class="{{btn.classname}}">{{btn.title}}</div>
+       {{/each}}
       </div>
     </div>
     <div class="dropdown-divider"></div>
