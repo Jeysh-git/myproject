@@ -1,0 +1,71 @@
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+         -o-animation: $animation;
+            animation: $animation;
+  }
+
+
+.employee-slide-container {
+    right:0;
+    top:0;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    z-index: 10;
+    
+    opacity:1 ;
+    display: flex;
+    justify-content: space-around;
+    @include animation(slide-modal .1s 1);
+  
+    .employee-outerslide{ 
+       background: #12344D;
+       opacity: 0.3;
+       width: 45%;   
+    }
+ 
+    .employee-slide {
+       width: 55%;
+       background-color: #fff;  
+    }
+  }
+  
+ .slideheader {
+    margin:10px;
+    margin-left: 15px;
+    justify-content: space-between;
+ }
+ 
+ .employee-slide-btns {
+    display: flex;
+ 
+    .apply-btn,.reset-btn {
+       padding: 10px;
+       font-weight: 400;
+    }
+ 
+    .apply-btn:hover, .reset-btn:hover {
+       background:#12344D ;
+       color: #fff;
+    }
+ 
+ }
+ 
+ .slide-headertext {
+    padding: 10px;
+ }
+ 
+ @keyframes slide-modal {
+    from {
+      right:-400px;
+  
+      opacity: 0;
+    }
+  
+    to {
+      right:0;
+  
+      opacity: 1;
+    }
+  }

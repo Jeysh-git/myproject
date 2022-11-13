@@ -1,13 +1,15 @@
-<div class = "add-employee-slide-container font-style">
-  <div class = "add-employee-outerslide"></div>
-  <div class = "add-employee-slide">
+<div class = "employee-slide-container font-style">
+  <div class = "employee-outerslide"> </div>
+  <div class = "employee-slide">
     <div class = "header slideheader">
       <div class="slide-headertext">{{title}}</div>
-      <div class="add-employee-slide-btns">
-        <div class="apply-btn">Apply</div>
-        <div class="reset-btn">Reset</div>
+      <div class="employee-slide-btns">
+        <div class="apply-btn">{{savebutton}}</div>
+        <div class="reset-btn">{{resetbutton}}</div>
       </div>
     </div>
     <div class="dropdown-divider"></div>
+    {{yield}}
   </div>
 </div>
+ 

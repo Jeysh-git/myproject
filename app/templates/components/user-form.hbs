@@ -1,2 +1,20 @@
-{{slide-modal title = title}}
+{{#slide-modal 
+    title = title
+    savebutton = "Apply"
+    resetbutton = "Reset"}}
 
+{{!-- user form elements --}}
+
+<div class = "inputfield-container font-style">
+    <div class = "field">
+        <div class = "fieldtext">First Name</div>
+        {{input type="text" value=firstName size="45" class="inputfield"}}
+    </div>
+
+    <div class = "field">
+        <div class = "fieldtext">Last Name</div>
+        {{input type="text" value=lastName size="45" class="inputfield"}}
+    </div> 
+</div>
+
+{{/slide-modal}}
