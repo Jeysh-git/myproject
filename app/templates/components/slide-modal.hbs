@@ -6,12 +6,16 @@
       <div class="employee-slide-btns">
         {{#each form-btns as |btn|}}
 
-        <div class="{{btn.classname}}">{{btn.title}}</div>
+        <button class="{{btn.classname}}" 
+          type ="{{btn.type}}" 
+          onclick={{if btn.isSubmit form-submit-action form-reset-action}}
+        >{{btn.title}}</button>
        {{/each}}
       </div>
     </div>
     <div class="horizontal-divider"></div>
-    {{yield}}
+    {{yield }}
   </div>
 </div>
+
  

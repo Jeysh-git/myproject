@@ -1,0 +1,50 @@
+.inputfield-container
+{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
+
+.field {
+   padding:10px;
+   
+}
+
+.fieldtext {
+   padding:5px;
+   font-size: 14px;
+line-height: 20px;
+color: #475867;
+}
+
+.inputfield {
+   border: 1px solid #CFD7DF;
+   height:32px;
+   border-radius: 4px;
+}
+.inputfield:hover{
+   border: 1px solid #475867;
+   box-shadow: inset 0px 1px 2px rgba(24, 50, 71, 0.05);
+}
+
+.inputfield:focus{
+   border: 1px solid red;
+}
+
+input {
+   color:red;
+
+font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+
+/* E900 */
+
+color: #12344D;
+padding-left: 12px;
+
+}

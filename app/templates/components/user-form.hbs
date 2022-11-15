@@ -1,5 +1,31 @@
-<SlideModal @slidetitle = {{formtitle}} @form-btns = {{formbuttons}}>
 
+<SlideModal 
+    @slidetitle = {{formtitle}} 
+    @form-btns = {{formbuttons}} 
+    @form-submit-action = {{action "apply"}} 
+    @form-reset-action = {{action "reset"}}
+>
 
+<div class = "inputfield-container font-style">
+
+  <div class = "field">
+            <div class = "fieldtext">First Name</div>
+            {{input type="text" value=member.first_name size="45" class="inputfield" }}
+        </div>
+
+        <div class = "field">
+            <div class = "fieldtext">Last Name</div>
+            {{input type="text" value=member.last_name size="45" class="inputfield"}}
+        </div>
+
+        <div class = "field">
+            <div class = "fieldtext">Email</div>
+            {{input type="text" value=member.email size="45" class="inputfield"}}
+        </div>   
+
+       
+
+        
+</div>
 
 </SlideModal>
