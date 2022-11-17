@@ -18,7 +18,7 @@ export default Component.extend({
             }
 
             
-            this.get('mem').set('image',preview.src)
+            this.get('member-profile').set('image',preview.src)
           }
         } 
 

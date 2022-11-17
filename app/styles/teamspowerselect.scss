@@ -5,9 +5,6 @@
 
 .ember-power-select-trigger{
     width:300px;
-   
-   
-
 }
 
 .ember-power-select-search input{
@@ -15,9 +12,7 @@
     background-repeat: no-repeat;
     padding: 5px;
     padding-left: 30px;
-    background-position:  3% 50%;
-    
-   
+    background-position:  3% 50%;   
 }
 
 .ember-power-select-option {
@@ -35,8 +30,8 @@
     background: #E5F2FD;
     color: #12344D;
     font-weight: 600;
-font-size: 14px;
-line-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .ember-basic-dropdown-content {
@@ -49,7 +44,6 @@ line-height: 20px;
 
 .ember-power-select-option[aria-current=true]{
     background: #E5F2FD;
-    
     color: #12344D;
     background-image:url('/assets/images/Path.png') ;
     background-repeat: no-repeat;

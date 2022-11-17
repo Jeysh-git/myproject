@@ -5,68 +5,50 @@
     @form-reset-action = {{action "reset"}}
 >
 
-{{avatar-upload mem = member}}
+<AvatarUpload @member-profile = {{member}}></AvatarUpload>
 <div class = "inputfield-container font-style">
 
-        
+    <div class = "field">
+        <div class = "fieldtext">First Name</div>
+        {{input type="text" value=member.first_name  class="inputfield" }}
+    </div>
 
-     
+    <div class = "field">
+        <div class = "fieldtext">Last Name</div>
+        {{input type="text" value=member.last_name  class="inputfield"}}
+    </div>
 
-        <div class = "field">
-            <div class = "fieldtext">First Name</div>
-            {{input type="text" value=member.first_name  class="inputfield" }}
-        </div>
+    <div class = "field">
+        <div class = "fieldtext">Email</div>
+        {{input type="text" value=member.email class="inputfield"}}
+    </div>   
 
-        <div class = "field">
-            <div class = "fieldtext">Last Name</div>
-            {{input type="text" value=member.last_name  class="inputfield"}}
-        </div>
-
-        <div class = "field">
-            <div class = "fieldtext">Email</div>
-            {{input type="text" value=member.email class="inputfield"}}
-        </div>   
-
-       <div class = "field">
-            <div class = "fieldtext">Date of Joining</div>
-         
-         {{bootstrap-datepicker value=member.joiningDate class="inputfield font-style"
+    <div class = "field">
+        <div class = "fieldtext">Date of Joining</div>
+        {{BootstrapDatepicker value=member.joiningDate class="inputfield font-style"
             format="dd.mm.yy" 
             orientation="bottom"  
-            autoclose=true
-            
-         }}
-          {{!-- {{input type="text" value=member.joiningDate size="45" class="inputfield"}}  --}}
-           
+            autoclose=true    
+        }}
+    </div>  
 
-        </div>  
+    <div class = "field">
+        <div class = "fieldtext">Designation</div>
+        {{input type="text" value=designation class="inputfield"}}
+    </div> 
 
-        <div class = "field">
-            <div class = "fieldtext">Designation</div>
-            {{input type="text" value=designation class="inputfield"}}
-        </div> 
-
-        <div class = "field font-style">
-            <div class = "fieldtext">Teams</div>
-            
-            {{#power-select 
-            
-  selected=selectedoption
-  searchPlaceholder="Search Team"
-  options=teams
-  onchange=(action "selectTeams")
-  as |teamname|
-}}
-
-  {{teamname}}
-
-  
-{{/power-select}}
-        </div> 
-
-        
-
-        
+    <div class = "field font-style">
+        <div class = "fieldtext">Teams</div>
+        {{#power-select 
+            selected=selectedoption
+            searchPlaceholder="Search Team"
+            options=teams
+            onchange=(action "selectTeams")
+            as |teamname|
+        }}
+            {{teamname}}  
+        {{/power-select}}
+    </div>         
 </div>
 
 </SlideModal>

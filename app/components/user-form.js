@@ -12,15 +12,11 @@ export default Component.extend({
 
         this.set('teams',['Freshteam1','Freshteam2','Freshteam3','Freshteam4'])
             
-
         this.set('formbuttons', [
             EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
             EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
             
-          ]);
-        
-       
-
+          ]);   
     },
 
    
@@ -28,6 +24,7 @@ export default Component.extend({
         apply(){
            //submit logic  
          },
+        
          reset(){
             // reset logic
         },
