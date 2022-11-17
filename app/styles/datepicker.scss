@@ -1,0 +1,44 @@
+.datepicker {
+    
+    width:300px;
+   // line-height: 30px;
+    font-weight: 300;
+    content:none;
+    
+
+
+}
+
+ tr,td,th {
+   // border-spacing: 5px;
+   height:5px;
+   //padding-left: 23px;
+   width:5px;
+   font-size: 11px;
+line-height: 18px;
+margin-left: 5px;
+
+
+}
+
+th {
+    color: #41637C;
+}
+
+td {
+    color: #183247;
+    text-align: center;
+    padding: 13px;
+    border-spacing: 15px;
+    
+}
+
+td:focus{
+    background: #7052CC;
+}
+
+table {
+    align-items: center;
+   
+    
+}

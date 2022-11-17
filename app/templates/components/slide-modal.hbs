@@ -4,11 +4,16 @@
     <div class = "header slideheader">
       <div class="slide-headertext">{{slidetitle}}</div>
       <div class="employee-slide-btns">
+       
         {{#each form-btns as |btn|}}
+
+        {{!-- todo: To send the actionName with the button and the action as well. 
+        And to bind the action with this button to make this a generic component--}}
 
         <button class="{{btn.classname}}" 
           type ="{{btn.type}}" 
-          onclick={{if btn.isSubmit form-submit-action form-reset-action}}
+          {{!-- onclick={{if btn.isSubmit form-submit-action form-reset-action}} --}}
+           {{action (action 'buttonAction' btn.actionName)}}
         >{{btn.title}}</button>
        {{/each}}
       </div>
