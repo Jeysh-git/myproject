@@ -14,7 +14,7 @@ export default Component.extend({
     search: "" ,
     displaysearch:null,
     
-    teamslist : computed ('selected_option','sort_option','sort_order','displaysearch',function(){
+    employeeslist : computed ('selected_option','sort_option','sort_order','displaysearch',function(){
 
         let teamlistArray = this.get('members').filterBy('team',this.get('selected_option'));
         let allteamlistArray = this.get('members')

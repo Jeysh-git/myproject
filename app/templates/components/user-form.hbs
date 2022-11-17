@@ -6,7 +6,7 @@
 >
 
 <AvatarUpload @member-profile = {{member}}></AvatarUpload>
-<div class = "inputfield-container font-style">
+<div class = "inputfield-container ">
 
     <div class = "field">
         <div class = "fieldtext">First Name</div>
@@ -25,19 +25,20 @@
 
     <div class = "field">
         <div class = "fieldtext">Date of Joining</div>
-        {{bootstrap-datepicker value=member.joiningDate class="inputfield font-style"
+        {{bootstrap-datepicker value=member.joiningDate class="inputfield"
             format="dd.mm.yy" 
             orientation="bottom"  
-            autoclose=true    
+            autoclose=true 
+            autocomplete="off"    
         }}
     </div>  
 
     <div class = "field">
         <div class = "fieldtext">Designation</div>
-        {{input type="text" value=designation class="inputfield"}}
+        {{input type="text" value=member.designation class="inputfield"}}
     </div> 
 
-    <div class = "field font-style">
+    <div class = "field ">
         <div class = "fieldtext">Teams</div>
         {{#power-select 
             selected=selectedoption
@@ -46,7 +47,7 @@
             onchange=(action "selectTeams")
             as |teamname|
         }}
-            {{teamname}}  
+        {{teamname}}
         {{/power-select}}
     </div>         
 </div>

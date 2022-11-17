@@ -63,8 +63,8 @@
    </div>
 <div class="content-container">
 
-   {{#each teamslist as |avatar|}}
-      {{user-card firstname = avatar.first_name lastname = avatar.last_name email = avatar.email image = avatar.image}}
+   {{#each employeeslist as |employee|}}
+      {{user-card employeeinfocard=employee}}
       {{else}}
          <div class="nodata">
             <div class = "nodataImage">{{svg-jar 'employees' height='96px' }}</div>

@@ -23,15 +23,16 @@ export default Component.extend({
     actions: {
         apply(){
            //submit logic  
+           //to handle uploaded image files and mention respective paths 
          },
         
          reset(){
             // reset logic
         },
 
-        selectTeams(teamname){
+        selectTeams(team){
             
-            this.set('selectedoption',teamname)
+            this.set('selectedoption',team)
             this.get('member').set('team',this.selectedoption)
         }
         

@@ -1,7 +1,3 @@
-// .ember-power-select-search ,input {
-
-// placeholder:"search";
-// }
 
 .ember-power-select-trigger{
     width:300px;
@@ -23,38 +19,33 @@
     color: #12344D;
     padding:5px;
     padding-left: 10px;
+
+    &:hover {
+        background: #E5F2FD;
+        color: #12344D;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
    
-}
-
-.ember-power-select-option:hover {
-    background: #E5F2FD;
-    color: #12344D;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.ember-basic-dropdown-content {
-    padding-bottom:10px;
 }
 
 .ember-basic-dropdown-content {
     padding: 8px;
-}
+    padding-bottom:10px;
 
-.ember-power-select-option[aria-current=true]{
-    background: #E5F2FD;
-    color: #12344D;
-    background-image:url('/assets/images/Path.png') ;
-    background-repeat: no-repeat;
-    background-position:  95%;
-}
+    .ember-power-select-option[aria-current=true]{
+        background: #E5F2FD;
+        color: #12344D;
+        background-image:url('/assets/images/Path.png') ;
+        background-repeat: no-repeat;
+        background-position:  95%;
+    }
 
-.ember-power-select-selected-item{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    font-family: 'SF Pro Text';
-    color: #12344D;
+    .ember-power-select-selected-item{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: #12344D;
+    }
 }
-
