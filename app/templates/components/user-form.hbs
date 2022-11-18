@@ -6,7 +6,7 @@
 >
 
 <AvatarUpload @member-profile = {{member}}></AvatarUpload>
-<div class = "inputfield-container ">
+<div class = "inputfield-container">
 
     <div class = "field">
         <div class = "fieldtext">First Name</div>
@@ -37,13 +37,12 @@
         <div class = "fieldtext">Designation</div>
         {{input type="text" value=member.designation class="inputfield"}}
     </div> 
-
     <div class = "field ">
         <div class = "fieldtext">Teams</div>
         {{#power-select 
             selected=selectedoption
             searchPlaceholder="Search Team"
-            options=teams
+            options=teamlists
             onchange=(action "selectTeams")
             as |teamname|
         }}

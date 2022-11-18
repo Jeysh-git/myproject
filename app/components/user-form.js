@@ -1,22 +1,26 @@
 import Component from '@ember/component';
 import EmberObject from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
     
     formbuttons:null,
     selectedoption: '',
     teams: '',
+    store: service(),
+    teamlists:'',
 
     init(){
         this._super(...arguments);
-
-        this.set('teams',['Freshteam1','Freshteam2','Freshteam3','Freshteam4'])
             
         this.set('formbuttons', [
             EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
             EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
             
           ]);   
+        
+        let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
+        this.set('teamlists',teams)
     },
 
    
@@ -31,7 +35,6 @@ export default Component.extend({
         },
 
         selectTeams(team){
-            
             this.set('selectedoption',team)
             this.get('member').set('team',this.selectedoption)
         }
