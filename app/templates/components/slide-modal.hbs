@@ -4,11 +4,11 @@
     <div class = "header slideheader">
       <div class="slide-headertext">{{slidetitle}}</div>
       <div class="employee-slide-btns">
+       
         {{#each form-btns as |btn|}}
-
         <button class="{{btn.classname}}" 
           type ="{{btn.type}}" 
-          onclick={{if btn.isSubmit form-submit-action form-reset-action}}
+           {{action (action 'buttonAction' btn.actionName)}}
         >{{btn.title}}</button>
        {{/each}}
       </div>
@@ -17,5 +17,3 @@
     {{yield }}
   </div>
 </div>
-
- 

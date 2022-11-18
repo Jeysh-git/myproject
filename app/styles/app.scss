@@ -5,6 +5,11 @@
 @import "search";
 @import "slider";
 @import "user-form-elements";
+@import "avatar";
+@import "datepicker";
+@import "ember-power-select";
+@import "teamspowerselect";
+
 
 $body-color: #e5e5e5;
 $leftnav-color :#12344d ;
@@ -49,8 +54,7 @@ body {
 .employee-image {
    border-radius:50px;
    height:80px;
-   width:80px;
-   padding-right:25px;
+   
 }
 
 .employee-initial {
@@ -212,6 +216,8 @@ body {
  }
 
  
+
+
 
 
 

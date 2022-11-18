@@ -2,9 +2,8 @@
 {{!-- {{yield}} --}}
 <div class="avatar-container" style = "background-color: {{colorpicker (initial title)}}">
     {{#if empImage}}
-    <div class = "employee-image">
-        {{svg-jar empImage height="80px"}}
-        </div>
+    <img class = "employee-image" src={{empImage}} height="80px" width="80px">
+    
     {{else}}
         <div class="employee-initial" >
              {{initial title}} 

@@ -1,4 +1,3 @@
-
 <SlideModal 
     @slidetitle = {{formtitle}} 
     @form-btns = {{formbuttons}} 
@@ -6,26 +5,50 @@
     @form-reset-action = {{action "reset"}}
 >
 
-<div class = "inputfield-container font-style">
+<AvatarUpload @member-profile = {{member}}></AvatarUpload>
+<div class = "inputfield-container">
 
-  <div class = "field">
-            <div class = "fieldtext">First Name</div>
-            {{input type="text" value=member.first_name size="45" class="inputfield" }}
-        </div>
+    <div class = "field">
+        <div class = "fieldtext">First Name</div>
+        {{input type="text" value=member.first_name  class="inputfield" }}
+    </div>
 
-        <div class = "field">
-            <div class = "fieldtext">Last Name</div>
-            {{input type="text" value=member.last_name size="45" class="inputfield"}}
-        </div>
+    <div class = "field">
+        <div class = "fieldtext">Last Name</div>
+        {{input type="text" value=member.last_name  class="inputfield"}}
+    </div>
 
-        <div class = "field">
-            <div class = "fieldtext">Email</div>
-            {{input type="text" value=member.email size="45" class="inputfield"}}
-        </div>   
+    <div class = "field">
+        <div class = "fieldtext">Email</div>
+        {{input type="text" value=member.email class="inputfield"}}
+    </div>   
 
-       
+    <div class = "field">
+        <div class = "fieldtext">Date of Joining</div>
+        {{bootstrap-datepicker value=member.joiningDate class="inputfield"
+            format="dd.mm.yy" 
+            orientation="bottom"  
+            autoclose=true 
+            autocomplete="off"    
+        }}
+    </div>  
 
-        
+    <div class = "field">
+        <div class = "fieldtext">Designation</div>
+        {{input type="text" value=member.designation class="inputfield"}}
+    </div> 
+    <div class = "field ">
+        <div class = "fieldtext">Teams</div>
+        {{#power-select 
+            selected=selectedoption
+            searchPlaceholder="Search Team"
+            options=teamlists
+            onchange=(action "selectTeams")
+            as |teamname|
+        }}
+        {{teamname}}
+        {{/power-select}}
+    </div>         
 </div>
 
 </SlideModal>

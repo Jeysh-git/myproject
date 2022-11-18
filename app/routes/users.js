@@ -7,7 +7,7 @@ export default Route.extend({
     //       last_name: 'karthik',
     //       email: 'aaa@gmail.com',
     //       team: 'Freshteam1',
-    //       image : 'Dark-Men',
+    //       image : '/assets/images/avatar.png',
     //       joiningDate: '2020-07-01'
     //     },  {
     //       first_name: 'Banu',
@@ -83,9 +83,6 @@ export default Route.extend({
     //     });
     // }
       model(){
-        // return this.store.findAll('user');
-        
-
         return this.store.findAll('user').
           then(results => results.filter(user => !user.get('isNew')))
       } 
