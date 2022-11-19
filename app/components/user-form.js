@@ -28,6 +28,7 @@ export default Component.extend({
         apply(){
            //submit logic  
            //to handle uploaded image files and mention respective paths 
+           return this.get('member').save();
          },
         
          reset(){

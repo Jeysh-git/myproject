@@ -3,23 +3,25 @@
     height: 92px;
     margin: 20px;
 
-    .profilepic {
-        position:absolute;
-        top:100px;
-        
-    }
+    
 
-    input.file-upload {
-        border:1px solid;
-        height:100px;
-        width:100px;
-        position: relative;
-        top:0;
-        z-index:1;
-        opacity:0;
-        right:0;
-    }
+    
 
+}
+.profilepicture {
+    position:absolute;
+    top:100px;
+    
+}
+input.file-upload {
+    border:1px solid;
+    height:100px;
+    width:100px;
+    position: relative;
+    top:0;
+    z-index:1;
+    opacity:0;
+    right:0;
 }
 
 

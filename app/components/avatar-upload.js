@@ -11,8 +11,7 @@ export default Component.extend({
             reader.addEventListener("load", () => {
            
             preview.src = reader.result;
-            //to get the path of the uploaded image.
-            // this.get('member-profile').set('image',preview.src)
+           this.get('member-profile').set('image',preview.src)
             }, false);
         
             if (file) {

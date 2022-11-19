@@ -1,7 +1,6 @@
 import DS from 'ember-data';
 import { computed } from '@ember/object';
-import { validator,buildValidation } from 'ember-cp-validations';
-
+import {buildValidations,validator} from 'ember-cp-validations';
 const models = [
     {
       modelAttr: "first_name",
@@ -26,7 +25,7 @@ const models = [
     {
       modelAttr: "email",
       presence: true,
-      regexp: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      regexp: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       formatErrorMessage: 'The email is not valid format'
     },
 
@@ -42,10 +41,10 @@ const models = [
     
   ]
   
-  const buildValidations = {};
+  const Validations = {};
   // iterating the models json and set each validator for a model
   models.forEach(model => {
-    buildValidation[model.modelAttr] = {
+    buildValidations[model.modelAttr] = {
       validators: [
         validator('presence', {
           presence: model.presence,
@@ -64,7 +63,7 @@ const models = [
     };
   });
 
-export default DS.Model.extend(Validations,{
+export default DS.Model.extend( Validations,{
 
     first_name: DS.attr('string'),
     last_name: DS.attr('string'),
