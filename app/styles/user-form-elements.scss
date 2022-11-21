@@ -27,11 +27,10 @@ color: #475867;
 }
 
 .inputfield:focus{
-   border: 1px solid red;
+   border: 1px solid #FF0000;
 }
 
 input {
-   color:red;
    font-family: 'SF Pro Text';
    font-style: normal;
    font-weight: 500;
@@ -44,6 +43,11 @@ input {
 
 .inputfield {
    width:300px;
+}
+
+.fielderror {
+   color:#FF0000;
+   font-size: 12px;
 }
 
 

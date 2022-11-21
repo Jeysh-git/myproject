@@ -9,18 +9,36 @@
 <div class = "inputfield-container">
 
     <div class = "field">
-        <div class = "fieldtext">First Name</div>
-        {{input type="text" value=member.first_name  class="inputfield" }}
+        <div class = "fieldtext">First Name <span style="color:#FF0000">*</span></div>
+        {{input type="text" value=member.first_name  class="inputfield" focus-out=(action (mut showFirstnameError) true) }}
+            {{#if showFirstnameError}}
+                <div class="fielderror">
+                    {{v-get member 'first_name' 'message'}}
+                </div>
+            {{/if}}
     </div>
+   
 
     <div class = "field">
-        <div class = "fieldtext">Last Name</div>
-        {{input type="text" value=member.last_name  class="inputfield"}}
-    </div>
+        <div class = "fieldtext">Last Name<span style="color:#FF0000">*</span></div>
+        {{input type="text" value=member.last_name  class="inputfield" focus-out=(action (mut showLastnameError) true)}}
+            {{#if showLastnameError}}
+                <div class="fielderror">
+                    {{v-get member 'last_name' 'message'}}
+                </div>
+            {{/if}}
+        </div>
 
     <div class = "field">
-        <div class = "fieldtext">Email</div>
-        {{input type="text" value=member.email class="inputfield"}}
+        <div class = "fieldtext">Email<span style="color:#FF0000">*</span></div>
+        {{input type="text" value=member.email class="inputfield" focus-out=(action (mut showEmailError) true)}}
+            {{#if showEmailError}}
+                {{#if (v-get member "email" "isInvalid")}}
+                 <div class="fielderror">
+                        E-mail address <strong>{{member.email}}</strong> is invalid.
+                    </div>   
+                {{/if}}
+            {{/if}}        
     </div>   
 
     <div class = "field">
@@ -35,8 +53,13 @@
 
     <div class = "field">
         <div class = "fieldtext">Designation</div>
-        {{input type="text" value=member.designation class="inputfield"}}
-    </div> 
+        {{input type="text" value=member.designation class="inputfield" focus-out=(action (mut showDesignationError) true)}}
+            {{#if showDesignationError}}
+                <div class="fielderror">
+                {{v-get member 'designation' 'message'}}
+                </div>
+            {{/if}}
+    </div>
     <div class = "field ">
         <div class = "fieldtext">Teams</div>
         {{#power-select 

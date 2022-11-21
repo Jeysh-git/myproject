@@ -4,7 +4,7 @@ export default Component.extend({
     
     actions: {
         previewImage() {
-            let preview = document.querySelector('img');
+            let preview = document.querySelector('.profilepicture');
             let file = document.querySelector('input[type=file]').files[0];
             let reader = new FileReader();
          
