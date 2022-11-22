@@ -10,6 +10,8 @@ export default Component.extend({
   teams: '',
   store: service(),
   teamlists:'',
+  hasValidationFailed:false,
+
 
   init(){
     this._super(...arguments);
@@ -29,11 +31,13 @@ export default Component.extend({
       joiningDate:'',
       team:''
      })
-     this.set('selectedoption','')
+     this.set('selectedoption','');
+     this.set('hasValidationFailed',false);
+    
+     
   },
 
   actions: {
-    
     apply(){
       let user = this.get('member');
       user.validate().then(({ validations }) => {
@@ -41,16 +45,23 @@ export default Component.extend({
             user.save();
             alert("data saved");
             this.resetModel()
-          }
+            validations.content.forEach(element=>{
+            document.querySelector("input[name="+element.attribute+"]").classList.remove("requiredinput");
+          })
+        }
         else{
-          alert("One or more fields have an error. Please check and try again");
-          }
+          this.set('hasValidationFailed',true) 
+          validations.errors.forEach(element=>{ 
+            document.querySelector("input[name="+element.attribute+"]").classList.add("requiredinput")
+          })
+        }
     });
       
     },
         
     reset(){
       this.resetModel();
+      
     },
     
     selectTeams(team){

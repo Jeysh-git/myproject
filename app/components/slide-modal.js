@@ -7,5 +7,14 @@ export default Component.extend({
             this.get(actionName)();
             
         },
+    
+    removeUncommitedModel(){
+        let user = this.get('member');
+        
+       if(user.get('isNew')){
+            user.rollbackAttributes();
+       }
+    
     }
+}
 })

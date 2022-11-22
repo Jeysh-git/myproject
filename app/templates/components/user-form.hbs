@@ -3,15 +3,18 @@
     @form-btns = {{formbuttons}} 
     @form-submit-action = {{action "apply"}} 
     @form-reset-action = {{action "reset"}}
+    @member = {{member}}
 >
 
 <AvatarUpload @member-profile = {{member}}></AvatarUpload>
 <div class = "inputfield-container">
 
     <div class = "field">
-        <div class = "fieldtext">First Name <span style="color:#FF0000">*</span></div>
-        {{input type="text" value=member.first_name  class="inputfield" focus-out=(action (mut showFirstnameError) true) }}
-            {{#if showFirstnameError}}
+        <div class = "fieldtext">First Name <span class = "requiredsymbol"> *</span></div>
+        {{input name="first_name" type="text" value=member.first_name class="inputfield"  }}
+       
+            {{#if hasValidationFailed}}
+           
                 <div class="fielderror">
                     {{v-get member 'first_name' 'message'}}
                 </div>
@@ -20,9 +23,9 @@
    
 
     <div class = "field">
-        <div class = "fieldtext">Last Name<span style="color:#FF0000">*</span></div>
-        {{input type="text" value=member.last_name  class="inputfield" focus-out=(action (mut showLastnameError) true)}}
-            {{#if showLastnameError}}
+        <div class = "fieldtext">Last Name <span class="requiredsymbol">*</span></div>
+        {{input name="last_name" type="text" value=member.last_name  class="inputfield" }}
+            {{#if hasValidationFailed}}
                 <div class="fielderror">
                     {{v-get member 'last_name' 'message'}}
                 </div>
@@ -30,14 +33,12 @@
         </div>
 
     <div class = "field">
-        <div class = "fieldtext">Email<span style="color:#FF0000">*</span></div>
-        {{input type="text" value=member.email class="inputfield" focus-out=(action (mut showEmailError) true)}}
-            {{#if showEmailError}}
-                {{#if (v-get member "email" "isInvalid")}}
-                 <div class="fielderror">
-                        E-mail address <strong>{{member.email}}</strong> is invalid.
-                    </div>   
-                {{/if}}
+        <div class = "fieldtext">Email <span class="requiredsymbol">*</span></div>
+        {{input name="email" type="text" value=member.email class="inputfield" }}
+            {{#if hasValidationFailed}}
+            <div class="fielderror">
+                    {{v-get member 'email' 'message'}}
+                </div>
             {{/if}}        
     </div>   
 
@@ -53,8 +54,8 @@
 
     <div class = "field">
         <div class = "fieldtext">Designation</div>
-        {{input type="text" value=member.designation class="inputfield" focus-out=(action (mut showDesignationError) true)}}
-            {{#if showDesignationError}}
+        {{input name="designation" type="text" value=member.designation class="inputfield" }}
+            {{#if hasValidationFailed}}
                 <div class="fielderror">
                 {{v-get member 'designation' 'message'}}
                 </div>

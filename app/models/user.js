@@ -18,7 +18,6 @@ const Validations = buildValidations({
       })
     ],
     designation: [
-        validator('presence', true),
         validator('length', {
         min: 2,
         max:128
