@@ -10,10 +10,10 @@
 
 <AvatarUpload @member-profile = {{member}}></AvatarUpload>
 <div class = "inputfield-container">
-
+{{log "hihihi" member.validations.attrs.first_name.isInvalid}}
     <div class = "field">
         <div class = "fieldtext">First Name <span class = "requiredsymbol"> *</span></div>
-        {{input name="first_name" type="text" value=member.first_name class= (if hasValidationFailed "inputfield requiredinput" "inputfield" )  }}
+        {{input name="first_name" type="text" value=member.first_name class= (if (and member.validations.attrs.first_name.isInvalid hasValidationFailed) "inputfield requiredinput" "inputfield"  )  }}
             {{#if hasValidationFailed}}
                 <div class="fielderror">
                     {{v-get member 'first_name' 'message'}}
@@ -23,7 +23,7 @@
    
     <div class = "field">
         <div class = "fieldtext">Last Name <span class="requiredsymbol">*</span></div>
-        {{input name="last_name" type="text" value=member.last_name  class= (if hasValidationFailed "inputfield requiredinput" "inputfield" ) }}
+        {{input name="last_name" type="text" value=member.last_name  class= (if (and member.validations.attrs.last_name.isInvalid hasValidationFailed) "inputfield requiredinput" "inputfield" ) }}
             {{#if hasValidationFailed}}
                 <div class="fielderror">
                     {{v-get member 'last_name' 'message'}}
@@ -33,7 +33,7 @@
 
     <div class = "field">
         <div class = "fieldtext">Email <span class="requiredsymbol">*</span></div>
-        {{input name="email" type="text" value=member.email class=(if hasValidationFailed "inputfield requiredinput" "inputfield" ) }}
+        {{input name="email" type="text" value=member.email class=(if (and member.validations.attrs.email.isInvalid hasValidationFailed) "inputfield requiredinput" "inputfield" ) }}
             {{#if hasValidationFailed}}
             <div class="fielderror">
                     {{v-get member 'email' 'message'}}
@@ -53,7 +53,7 @@
 
     <div class = "field">
         <div class = "fieldtext">Designation</div>
-        {{input name="designation" type="text" value=member.designation class=(if hasValidationFailed "inputfield requiredinput" "inputfield" ) }}
+        {{input name="designation" type="text" value=member.designation class=(if (and member.validations.attrs.designation.isInvalid hasValidationFailed) "inputfield requiredinput" "inputfield" ) }}
             {{#if hasValidationFailed}}
                 <div class="fielderror">
                 {{v-get member 'designation' 'message'}}
