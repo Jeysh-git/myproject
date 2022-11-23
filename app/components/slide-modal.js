@@ -8,13 +8,6 @@ export default Component.extend({
             
         },
     
-    removeUncommitedModel(){
-        let user = this.get('member');
-        
-       if(user.get('isNew')){
-            user.rollbackAttributes();
-       }
     
-    }
 }
 })

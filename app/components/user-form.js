@@ -11,6 +11,7 @@ export default Component.extend({
   store: service(),
   teamlists:'',
   hasValidationFailed:false,
+  attr:'',
 
 
   init(){
@@ -45,15 +46,10 @@ export default Component.extend({
             user.save();
             alert("data saved");
             this.resetModel()
-            validations.content.forEach(element=>{
-            document.querySelector("input[name="+element.attribute+"]").classList.remove("requiredinput");
-          })
         }
         else{
           this.set('hasValidationFailed',true) 
-          validations.errors.forEach(element=>{ 
-            document.querySelector("input[name="+element.attribute+"]").classList.add("requiredinput")
-          })
+          
         }
     });
       
@@ -67,7 +63,17 @@ export default Component.extend({
     selectTeams(team){
       this.set('selectedoption',team)
       this.get('member').set('team',this.selectedoption)
-    }
+    },
+
+    removeUncommitedModel(){
+      let user = this.get('member');
+      
+     if(user.get('isNew')){
+          user.destroyRecord();
+     }
+  
+  }
+
         
   }
 });
