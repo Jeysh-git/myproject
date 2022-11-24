@@ -8,9 +8,13 @@
     @path = "users"
 >
 
-<AvatarUpload @member-profile = {{member}}></AvatarUpload>
+<AvatarUpload 
+@member-profile = {{member}} 
+@imageplaceholder={{imageplaceholder}}
+@ValidationFailed = {{imageValidationFailed}}>
+
+</AvatarUpload>
 <div class = "inputfield-container">
-{{log "hihihi" member.validations.attrs.first_name.isInvalid}}
     <div class = "field">
         <div class = "fieldtext">First Name <span class = "requiredsymbol"> *</span></div>
         {{input name="first_name" type="text" value=member.first_name class= (if (and member.validations.attrs.first_name.isInvalid hasValidationFailed) "inputfield requiredinput" "inputfield"  )  }}

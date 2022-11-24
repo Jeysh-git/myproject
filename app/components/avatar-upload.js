@@ -1,25 +1,34 @@
 import Component from '@ember/component';
 
 export default Component.extend({
+
+   imageError: '',
     
     actions: {
         previewImage() {
-            let preview = document.querySelector('.profilepicture');
-            let file = document.querySelector('input[type=file]').files[0];
+          
+            let file = document.querySelector('#file-upload').files[0];
+            
             let reader = new FileReader();
+            let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+             
+            if (!allowedExtensions.exec(file.name)) {
+                this.set('ValidationFailed',true)
+                this.set('imageError','Invalid file type')
+                return false;
+            }
+            else
+            {
          
             reader.addEventListener("load", () => {
-           
-            preview.src = reader.result;
-           this.get('member-profile').set('image',preview.src)
+            this.set('imageplaceholder',reader.result)
+            this.get('member-profile').set('image',this.imageplaceholder)
             }, false);
         
             if (file) {
               reader.readAsDataURL(file);
             }
-
-            
-            
+          }
           }
         } 
 

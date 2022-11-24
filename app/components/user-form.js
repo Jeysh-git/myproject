@@ -9,9 +9,12 @@ export default Component.extend({
   selectedoption: '',
   teams: '',
   store: service(),
+  router:service(),
   teamlists:'',
   hasValidationFailed:false,
+  imageValidationFailed:false,
   attr:'',
+  imageplaceholder:'/assets/images/profilepic.png',
 
 
   init(){
@@ -30,10 +33,14 @@ export default Component.extend({
       email:'',
       designation:'',
       joiningDate:'',
-      team:''
+      team:'',
+      image:''
      })
-     this.set('selectedoption','');
-     this.set('hasValidationFailed',false);
+    this.set('selectedoption','');
+    this.set('hasValidationFailed',false);
+    this.set('imageplaceholder','/assets/images/profilepic.png');
+    this.set('imageValidationFailed',false);
+    document.querySelector('#file-upload').value = null;
     
      
   },
@@ -44,8 +51,7 @@ export default Component.extend({
       user.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
             user.save();
-            alert("data saved");
-            this.resetModel()
+            this.get('router').transitionTo('users');
         }
         else{
           this.set('hasValidationFailed',true) 
