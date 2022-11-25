@@ -9,8 +9,8 @@
 .employee-slide-container {
     right:0;
     top:0;
-    position: absolute;
-    width: 100%;
+   position: absolute;
+   //  width: 100%;
     height:100%;
     z-index: 10;
     
@@ -18,21 +18,37 @@
     display: flex;
     justify-content: space-around;
     @include animation(slide-modal .1s 1);
+    visibility: visible;
   
     .employee-outerslide{ 
        background: #12344D;
        opacity: 0.3;
-       width: 45%;   
+       width: 45%; 
+       
     }
  
     .employee-slide {
        width: 55%;
        background-color: #fff;  
+       
     }
   }
+
+  .slideleft-button {
+   position: absolute;
+   width: 60px;
+   z-index: 1;
+   margin-right:205px;
+   background-color: #12344d;
+   text-align: center;
+   height: 30px;
+   
+}
+
+
   
  .slideheader {
-    margin:10px;
+   margin:10px;
     margin-left: 15px;
     justify-content: space-between;
  }
@@ -55,9 +71,7 @@
  }
 
  .horizontal-divider {
-   height: 0;
-   margin: 0.5rem 0;
-   overflow: hidden;
+  
    border-top: 1px solid #e9ecef;
  }
  

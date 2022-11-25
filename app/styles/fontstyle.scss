@@ -1,5 +1,10 @@
 $header-font: SF UI Text;
 
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url(/assets/fonts/SF-PRO-Text-Medium.otf) format('truetype');
+  }
+
 .font-style {
     font-family: 'SF Pro Text';
     font-style: normal;

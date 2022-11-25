@@ -6,6 +6,8 @@ export default Component.extend({
             if(this.get(actionName))
             this.get(actionName)();
             
-        }
-    }
+        },
+    
+    
+}
 })

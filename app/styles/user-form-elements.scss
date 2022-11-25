@@ -16,22 +16,31 @@ line-height: 20px;
 color: #475867;
 }
 
-.inputfield {
+.inputfield{
    border: 1px solid #CFD7DF;
    height:32px;
    border-radius: 4px;
+   width:300px;
 }
+
+.requiredinput{
+   border:1px solid red;
+}
+
+.requiredsymbol {
+   color:#FF0000
+}
+
 .inputfield:hover{
    border: 1px solid #475867;
    box-shadow: inset 0px 1px 2px rgba(24, 50, 71, 0.05);
 }
 
 .inputfield:focus{
-   border: 1px solid red;
+   border: 1px solid #FF0000;
 }
 
 input {
-   color:red;
    font-family: 'SF Pro Text';
    font-style: normal;
    font-weight: 500;
@@ -42,8 +51,9 @@ input {
 
 }
 
-.inputfield {
-   width:300px;
+.fielderror {
+   color:#FF0000;
+   font-size: 12px;
 }
 
 

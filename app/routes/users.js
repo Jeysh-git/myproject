@@ -10,26 +10,12 @@ export default Route.extend({
     //       image : '/assets/images/avatar.png',
     //       joiningDate: '2020-07-01'
     //     },  {
-    //       first_name: 'Banu',
-    //       last_name: 'rekha',
-    //       email: 'ccc@gmail.com',
-    //       team: 'Freshteam3',
-    //       image:'',
-    //       joiningDate: '2020-07-04'  
-    //     }, {
     //       first_name: 'Chitra',
     //       last_name: 'ganesh',
     //       email: 'ddd@gmail.com',
     //       team: 'Freshteam4',
     //       image:'',
     //       joiningDate: '2020-07-05'
-    //     }, {
-    //       first_name: 'Dinesh',
-    //       last_name: 'kumar',
-    //       email: 'eee@gmail.com',
-    //       team: 'Freshteam1',
-    //       image:'',
-    //       joiningDate: '2020-07-06'
     //     }, {
     //       first_name: 'Aarathy',
     //       last_name: 'selvaraj',
