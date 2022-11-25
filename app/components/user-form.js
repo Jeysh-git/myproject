@@ -19,12 +19,32 @@ export default Component.extend({
 
   init(){
     this._super(...arguments);
-      this.set('formbuttons', [
-        EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
-        EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
-        ]);   
+      
         let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
         this.set('teamlists',teams)
+        
+        let imageinEditfield = this.get('member').get('image')
+
+        if(this.editmode){
+
+          this.set('formbuttons', [
+            EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
+            ]);   
+
+          this.set('selectedoption',this.get('member').get('team'))
+          if(!imageinEditfield)
+          this.imageplaceholder = '/assets/images/profilepic.png'
+          else
+          this.imageplaceholder = imageinEditfield
+        }
+        else {
+          this.set('formbuttons', [
+            EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
+            EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
+            ]);   
+        }
+
+
     },
   resetModel (){
     this.get('member').setProperties({
@@ -79,7 +99,6 @@ export default Component.extend({
      }
   
   }
-
         
   }
 });

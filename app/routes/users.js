@@ -13,52 +13,24 @@ export default Route.extend({
     //       first_name: 'Chitra',
     //       last_name: 'ganesh',
     //       email: 'ddd@gmail.com',
-    //       team: 'Freshteam4',
+    //       team: 'Freshteam2',
     //       image:'',
     //       joiningDate: '2020-07-05'
     //     }, {
     //       first_name: 'Aarathy',
     //       last_name: 'selvaraj',
     //       email: 'fff@gmail.com',
-    //       team: 'Freshteam2',
+    //       team: 'Freshteam3',
     //       image: '',
     //       joiningDate: '2020-07-01'
     //     }, {
     //       first_name: 'Shankar',
     //       last_name: 'ganesh',
     //       email: 'ggg@gmail.com',
-    //       team: 'Freshteam2',
-    //       image:'',
-    //       joiningDate: '2020-07-07'
-    //     }, {
-    //       first_name: 'Yogesh',
-    //       last_name: 'prabu',
-    //       email: 'hhh@gmail.com',
-    //       team: 'Freshteam3',
-    //       image:'',
-    //       joiningDate: '2020-07-05'
-    //     }, {
-    //       first_name: 'Nivetha',
-    //       last_name: 'yogesh',
-    //       email: 'iii@gmail.com',
     //       team: 'Freshteam4',
     //       image:'',
     //       joiningDate: '2020-07-07'
-    //     }, {
-    //       first_name: 'Saanvi',
-    //       last_name: 'shankar',
-    //       email: 'jjj@gmail.com',
-    //       team: 'Freshteam4',
-    //       image:'',
-    //       joiningDate: '2020-07-07'
-    //     }, {
-    //       first_name: 'Dheeran',
-    //       last_name: 'kumar',
-    //       email: 'hhh@gmail.com',
-    //       team: 'Freshteam3',
-    //       image:'',
-    //       joiningDate: '2020-07-09'
-    //     }, 
+    //     },  
     //       ]; // Add more data here
 
     

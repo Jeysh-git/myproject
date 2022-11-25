@@ -2,7 +2,9 @@
 
 <div class = "card-container">
 
-    
+    {{#link-to "users.edit" employeeinfocard.id }}
+    <div class='edit_hover_button'>{{svg-jar 'Editicon' width='13px' height="14px" }}</div >
+    {{/link-to}}
     {{user-avatar title=employeeinfocard.first_name empImage=employeeinfocard.image}}
     <div class = "namebox">
          {{employeeinfocard.fullName}}
