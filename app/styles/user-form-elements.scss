@@ -56,7 +56,13 @@ input {
    font-size: 12px;
 }
 
-
-
+.edit_hover_button {
+   visibility:hidden;
+ }
+ .card-container:hover .edit_hover_button{
+  visibility:visible;
+  
+ }
+ 
 
 

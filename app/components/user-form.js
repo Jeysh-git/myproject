@@ -19,13 +19,25 @@ export default Component.extend({
 
   init(){
     this._super(...arguments);
+    let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
+    this.set('teamlists',teams)
+
+    if(!this.get('member.isNew')){
       this.set('formbuttons', [
         EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
-        EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
-        ]);   
-        let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
-        this.set('teamlists',teams)
-    },
+      ]);   
+
+      this.set('selectedoption',this.get('member.team'))
+      this.set('imageplaceholder',this.get('member.image')||'/assets/images/profilepic.png')
+    }
+    else {
+      this.set('formbuttons', [
+      EmberObject.create({ classname: 'apply-btn',title:'Apply',actionName:'form-submit-action'}),
+      EmberObject.create({ classname: 'reset-btn',title:'Reset',actionName:'form-reset-action'}),
+      ]);   
+    }
+  },
+  
   resetModel (){
     this.get('member').setProperties({
       first_name:'',
@@ -72,14 +84,12 @@ export default Component.extend({
     },
 
     removeUncommitedModel(){
-      let user = this.get('member');
-      
+      let user = this.get('member');    
      if(user.get('isNew')){
           user.destroyRecord();
      }
   
   }
-
         
   }
 });

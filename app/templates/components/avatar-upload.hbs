@@ -1,9 +1,10 @@
 
+<button class='cancel_hover_button' {{action "removeImage"}}>{{svg-jar 'Editicon' width='13px' height="13px" }}</button > 
 <div class ="profile-container">
-   
+  
     
     <input id = "file-upload" type="file" onchange={{action "previewImage"}} />
-  
+   
     <img class = "profilepicture" src= {{imageplaceholder}} height="93" width="93" alt="Image preview" />
     {{#if ValidationFailed}}
     <div class="fielderror">
