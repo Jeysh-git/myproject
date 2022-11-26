@@ -1,7 +1,9 @@
 .profile-container {
-    width: 90px;
+    width: 120px;
     height: 92px;
     margin: 20px;
+   // border:1px solid;
+    display: flex;
 }
 .profilepicture {
     position:absolute;
@@ -17,6 +19,14 @@
     z-index:1;
     opacity:0;
     right:0;
+}
+
+.cancel_hover_button {
+margin-left: 100px;
+ height:13px;
+ width:13px;
+border:none;
+ background: none;
 }
 
 

@@ -5,6 +5,5 @@ export default Route.extend({
     model(){       
         return this.store.createRecord('user');
     
-    }
-        
+    }        
 });

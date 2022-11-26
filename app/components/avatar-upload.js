@@ -29,7 +29,14 @@ export default Component.extend({
               reader.readAsDataURL(file);
             }
           }
-          }
+        },
+
+        removeImage(){
+          this.set('imageplaceholder','/assets/images/profilepic.png')
+          this.get('member-profile').set('image','');
+          
+        }
+
         } 
 
 });
