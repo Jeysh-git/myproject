@@ -3,7 +3,7 @@
         <Modal.header>{{svg-jar 'popupalert' width='30px' height="30px" }}</Modal.header>
         <Modal.body><div class="modal-text">{{modal-title}}</div></Modal.body>
         <Modal.footer as |footer|>
-            <a class="popup-link" href="http://localhost:4200/users" {{action confirm-action preventDefault=false}}><BsButton class="popup-buttons">Save</BsButton></a>
+            {{#link-to 'users' class="popup-link" invokeAction=(action confirm-action) preventDefault=false}}<BsButton class="popup-buttons">Save</BsButton>{{/link-to}}
             {{#link-to 'users' preventDefault=false class="popup-link"}}<BsButton class="popup-buttons">Cancel</BsButton>{{/link-to}}
         </Modal.footer>
     </div>
