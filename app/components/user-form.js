@@ -15,6 +15,7 @@ export default Component.extend({
   imageValidationFailed:false,
   attr:'',
   imageplaceholder:'/assets/images/profilepic.png',
+  applyPopupmodal:false,
 
 
   init(){
@@ -58,18 +59,25 @@ export default Component.extend({
   },
 
   actions: {
+
     apply(){
-      let user = this.get('member');
-      user.validate().then(({ validations }) => {
+      let user = this.get('member')
+      return user.validate().then(({ validations }) => {
+        
         if (validations.get('isValid')) {
-            user.save();
-            this.get('router').transitionTo('users');
+          this.set('applyPopupmodal',true);           
         }
         else{
-          this.set('hasValidationFailed',true) 
-          
+          this.set('hasValidationFailed',true)       
         }
     });
+      
+    },
+
+    confirmApply(){
+      
+      let user = this.get('member');
+      user.save();
       
     },
         

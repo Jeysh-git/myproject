@@ -9,11 +9,18 @@
 >
 
 <AvatarUpload 
-@member-profile = {{member}} 
-@imageplaceholder={{imageplaceholder}}
-@ValidationFailed = {{imageValidationFailed}}>
-
+    @member-profile = {{member}} 
+    @imageplaceholder={{imageplaceholder}}
+    @ValidationFailed = {{imageValidationFailed}}>
 </AvatarUpload>
+
+<PopupModal 
+    @isPopupOpen = {{this.applyPopupmodal}}
+    @confirm-action = {{action "confirmApply"}}
+    @modal-title = "Do you wish to continue?"
+    @path="users"
+></PopupModal>
+    
 <div class = "inputfield-container">
     <div class = "field">
         <div class = "fieldtext">First Name <span class = "requiredsymbol"> *</span></div>
@@ -79,3 +86,4 @@
 </div>
 
 </SlideModal>
+

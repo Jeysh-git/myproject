@@ -94,6 +94,7 @@ export default Component.extend({
         
         getTeams(teamName) {
             this.set('selected_option',teamName);
+            
         },
 
         sortByFields(field){

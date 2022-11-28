@@ -1,0 +1,48 @@
+.popup-modal {
+  display: flex;
+  .close{
+    visibility: hidden;
+  }
+ 
+  .modal-content {
+    flex-direction: row;
+    width:600px;
+    height:86px;
+   
+    &:hover{
+        background: #FFFFFF;
+        box-shadow: 0px 2px 20px rgba(24, 50, 71, 0.2);    
+
+    }
+  }
+
+  .modal-text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .modal-footer {
+    flex-wrap: nowrap;
+  }
+
+ .popup-buttons{
+  background: none;
+  border:none;
+  color:#12344D;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+
+  &:hover {
+    background:#12344D ;
+    color: #fff;
+  }
+ }
+
+ .popup-link{
+  &:hover {
+    color: #fff;
+  }
+ }
+}
