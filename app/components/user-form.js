@@ -18,6 +18,7 @@ export default Component.extend({
   applyPopupmodal:false,
   popupmessage:'',
   popupbuttons:null,
+  isSlideOpen:true,
 
 
   init(){
@@ -74,8 +75,10 @@ export default Component.extend({
       return user.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
           user.save().then(()=>{
-            document.querySelector('.employee-slide-container').style.visibility="hidden";
+         //   document.querySelector('.employee-slide-container').style.visibility="hidden";
             this.set('applyPopupmodal',true);
+            this.set('isSlideOpen',false)
+
              
           });           
         }
