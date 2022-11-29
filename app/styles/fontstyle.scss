@@ -2,8 +2,13 @@ $header-font: SF UI Text;
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url(/assets/fonts/SF-PRO-Text-Medium.otf) format('truetype');
+    src: url(/public/assets/fonts/FontsFree-Net-SFProText-Regular.ttf) format('truetype');
   }
+
+// @font-face {
+//   font-family: 'SF UI Text';
+//   src: url(/public/assets/fonts/FontsFree-Net-sf-ui-text-regular-58646b56a688c.ttf)
+// }
 
 .font-style {
     font-family: 'SF Pro Text';

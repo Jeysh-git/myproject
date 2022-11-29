@@ -58,11 +58,16 @@ input {
 
 .edit_hover_button {
    visibility:hidden;
+   display: flex;
+   margin-left:135px;
  }
  .card-container:hover .edit_hover_button{
   visibility:visible;
   
  }
+
+
+ 
  
 
 

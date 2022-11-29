@@ -42,6 +42,7 @@ export default Route.extend({
     // }
       model(){
         return this.store.findAll('user').
-          then(results => results.filter(user => !user.get('isNew')))
-      } 
+          then((results) => results.filter(user => !user.get('isNew')))
+      } ,
+
 })

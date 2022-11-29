@@ -9,6 +9,7 @@
 @import "datepicker";
 @import "ember-power-select";
 @import "teamspowerselect";
+@import "bsmodal-popups";
 
 
 $body-color: #e5e5e5;
@@ -20,6 +21,7 @@ $leftnav-color :#12344d ;
 
 body {
     background-color: $body-color ;
+    font-family:'SF Pro Text';
 }
 .users-container {
    height:fit-content;
@@ -54,6 +56,15 @@ body {
       box-shadow: 0px 2px 10px rgba(24, 50, 71, 0.2);
       border-radius: 2px;
       }
+}
+
+.usercard-buttons{
+   border:none;
+   background: transparent;
+
+   &:hover {
+      background: #e8eef3;
+   }
 }
 
 .employee-image {
