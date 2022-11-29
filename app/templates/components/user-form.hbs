@@ -15,9 +15,10 @@
 </AvatarUpload>
 
 <PopupModal 
-    @isPopupOpen = {{this.applyPopupmodal}}
-    @confirm-action = {{action "confirmApply"}}
-    @modal-title = "Do you wish to continue?"
+    @isPopupOpen = {{applyPopupmodal}}
+    @icon = "Success"
+    @popup-btns = {{popupbuttons}}
+    @modal-title = {{this.popupmessage}}
     @path="users"
 ></PopupModal>
     

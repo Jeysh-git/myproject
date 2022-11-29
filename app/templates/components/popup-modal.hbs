@@ -1,10 +1,25 @@
 <BsModal  @open = {{isPopupOpen}} as |Modal|>
     <div class= "popup-modal">
-        <Modal.header>{{svg-jar 'popupalert' width='30px' height="30px" }}</Modal.header>
+        <Modal.header>{{svg-jar icon width='30px' height="30px" }}</Modal.header>
         <Modal.body><div class="modal-text">{{modal-title}}</div></Modal.body>
         <Modal.footer as |footer|>
-            {{#link-to 'users' class="popup-link" invokeAction=(action confirm-action) preventDefault=false}}<BsButton class="popup-buttons">Save</BsButton>{{/link-to}}
-            {{#link-to 'users' preventDefault=false class="popup-link"}}<BsButton class="popup-buttons">Cancel</BsButton>{{/link-to}}
+
+        {{!--Todo: To reload the router, once the save / delete pop-ups got closed  --}}
+       
+       {{!-- {{#each popup-btns as |btn|}}
+        <BsButton class="popup-buttons" 
+           @onClick={{action (action 'buttonAction' btn.actionName)}}
+        >{{btn.title}}</BsButton>
+       {{/each}}   --}}
+
+        {{#each popup-btns as |btn|}}
+        {{#link-to 'users' class="popup-link" invokeAction=(if (not-eq btn.actionName 'null') (action (action 'buttonAction' btn.actionName))) 
+        preventDefault=false}}<BsButton class="popup-buttons">
+          
+        {{btn.title}}</BsButton>{{/link-to}}
+       {{/each}}  
+      
+        
         </Modal.footer>
     </div>
 </BsModal>

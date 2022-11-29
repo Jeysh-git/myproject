@@ -12,6 +12,10 @@
    
     <PopupModal 
     @isPopupOpen = {{this.deletePopupmodal}}
+    @icon = "popupalert"
+    @popup-btns = {{popupbuttons}}
+    @del-ok-action = {{action "confirmDelete"}}
+    @del-cancel-action = {{action "closepopup"}}
     @confirm-action = {{action "confirmDelete"}}
     @modal-title = "Do you wish to remove this employee from freshteam?"
     @path="users"
