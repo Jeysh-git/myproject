@@ -1,0 +1,62 @@
+<div class = "usercards-container">
+   <div class = "dropdown-container">
+      <div class = "dropdown-text">Filter By</div>
+      <BsDropdown as |dd|>
+         <dd.toggle><div class ="option-text"> {{this.selected_option}} </div>
+            {{svg-jar "Vector" class='vector' width='8px' height='5px'}}
+         </dd.toggle>
+         <dd.menu as |ddm|>
+            {{#each teams as |team|}}
+               <ddm.item>
+                  <a href {{ action "getTeams" team }}>
+                     <div class ="item-lists item-droplists">{{team}}</div>
+                  </a>
+               </ddm.item>
+            {{/each}}
+         </dd.menu>
+      </BsDropdown>
+   </div>
+
+   <div class = "dropdown-container">
+      <div class = "dropdown-text">Sort By</div>
+         <BsDropdown @closeOnMenuClick={{false}} as |dd|>    
+            <dd.toggle><div class ="option-text">{{this.sort_title}} </div>
+               {{svg-jar 'Vector' class='vector' width='8px' height='5px'}}
+            </dd.toggle>
+             <dd.menu as |ddm|>
+               {{#each sortfieldList as |fieldList|}}
+                  <ddm.item>
+                     <a href {{ action "sortByFields" fieldList.field }}>
+                     <div class ="item-lists {{if (eq sort_option fieldList.field) "selected"  }}">{{fieldList.title}}</div>
+                     </a>
+                  </ddm.item>
+               {{/each}}
+               <div class="dropdown-divider"></div>
+               {{#each sortorderlist as |orderList|}}
+                  <ddm.item>
+                     <a href {{ action "sortByFieldsInOrder" orderList.field }}>
+                     <div class ="item-lists {{if (eq sort_order orderList.field) "selected"  }}">{{orderList.title}}</div>
+                     </a>
+                  </ddm.item>
+               {{/each}}
+                 
+            </dd.menu>
+               
+         </BsDropdown>
+
+      </div>
+      
+      <div class ="search-container">
+      
+         <form>
+         
+            {{input value=search
+               type = "search"
+               key-up=(action 'searchEmployeeName')
+               click=(action 'searchEmployeeName')
+               class="font-style light" 
+               placeholder="Search By Name"}}
+                <div class="searchiconImage"> {{svg-jar 'Normal' height='15px' }}</div>
+         </form>
+      </div>
+   </div>
