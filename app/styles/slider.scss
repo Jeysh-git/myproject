@@ -6,7 +6,7 @@
   }
 
 
-.employee-slide-container {
+.slide-container {
     right:0;
     top:0;
    position: absolute;
@@ -20,14 +20,14 @@
     @include animation(slide-modal .1s 1);
     visibility: visible;
   
-    .employee-outerslide{ 
+    .outerslide{ 
        background: #12344D;
        opacity: 0.3;
        width: 45%; 
        
     }
  
-    .employee-slide {
+    .content-slide {
        width: 55%;
        background-color: #fff;  
        
@@ -53,7 +53,7 @@
     justify-content: space-between;
  }
  
- .employee-slide-btns {
+ .slide-btns {
     display: flex;
  
     .apply-btn,.reset-btn {

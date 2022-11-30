@@ -1,16 +1,16 @@
-<div class = "employee-slide-container" >
+<div class = "slide-container" >
         <div class = "leftbar-logo slideleft-button" >
             <div class="logoimg" {{action 'cancelbtn-action'}}>{{#link-to path preventDefault=false }}{{svg-jar 'Cancel' width='20px' height="20px" }}{{/link-to}} </div> 
         </div>
        
-  <div class = "employee-outerslide"></div>
+  <div class = "outerslide"></div>
     
-  <div class = "employee-slide">
+  <div class = "content-slide">
   
     <div class = "header slideheader">
        
       <div class="slide-headertext">{{slidetitle}}</div>
-      <div class="employee-slide-btns">
+      <div class="slide-btns">
        
         {{#each form-btns as |btn|}}
         <button class="{{btn.classname}}" 
