@@ -1,8 +1,7 @@
-
-<UserFiltering @employees = {{members}} @getEmployeeListFromChild={{action "getEmployeeList"}}></UserFiltering>
+ 
 <div class="content-container">
 
-   {{#each employees as |employee|}}
+   {{#each employeeCards as |employee|}}
       {{user-card employeeinfocard=employee}}
       {{else}}
          <div class="nodata">
@@ -11,5 +10,5 @@
             <div class = "nodatamessage2 font-family">Try looking for something less specific</div>
          </div>
    {{/each}}
-   
+  
 </div>
