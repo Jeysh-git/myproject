@@ -19,6 +19,7 @@ export default Component.extend({
   popupmessage:'',
   popupbuttons:null,
   isSlideOpen:true,
+  path:'users-listview',
 
 
   init(){
@@ -47,6 +48,7 @@ export default Component.extend({
 
       this.set('popupmessage',"Employee added successfully!")
     }
+    // this.set('path',(this.get('path')!= "users")||"users");
   },
   
   resetModel (){

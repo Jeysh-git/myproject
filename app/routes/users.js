@@ -7,6 +7,7 @@ export default Route.extend({
     //       last_name: 'karthik',
     //       email: 'aaa@gmail.com',
     //       team: 'Freshteam1',
+    //       designation: 'HR Associate',
     //       image : '/assets/images/avatar.png',
     //       joiningDate: '2020-07-01'
     //     },  {
@@ -14,6 +15,7 @@ export default Route.extend({
     //       last_name: 'ganesh',
     //       email: 'ddd@gmail.com',
     //       team: 'Freshteam2',
+    //       designation: 'HR Associate',
     //       image:'',
     //       joiningDate: '2020-07-05'
     //     }, {
@@ -21,6 +23,7 @@ export default Route.extend({
     //       last_name: 'selvaraj',
     //       email: 'fff@gmail.com',
     //       team: 'Freshteam3',
+    //       designation: 'HR Associate',
     //       image: '',
     //       joiningDate: '2020-07-01'
     //     }, {
@@ -28,6 +31,7 @@ export default Route.extend({
     //       last_name: 'ganesh',
     //       email: 'ggg@gmail.com',
     //       team: 'Freshteam4',
+    //       designation: 'HR Associate',
     //       image:'',
     //       joiningDate: '2020-07-07'
     //     },  

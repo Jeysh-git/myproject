@@ -1,17 +1,14 @@
-$header-font: SF UI Text;
+// $header-font: SF UI Text;
 
 @font-face {
     font-family: 'SF Pro Text';
-    src: url(/public/assets/fonts/FontsFree-Net-SFProText-Regular.ttf) format('truetype');
+    src: url('/assets/fonts/SF-Pro-Text-Regular.otf') format('truetype');
   }
 
-// @font-face {
-//   font-family: 'SF UI Text';
-//   src: url(/public/assets/fonts/FontsFree-Net-sf-ui-text-regular-58646b56a688c.ttf)
-// }
-
 .font-style {
-    font-family: 'SF Pro Text';
-    font-style: normal;
-    font-weight: 600;
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
  }

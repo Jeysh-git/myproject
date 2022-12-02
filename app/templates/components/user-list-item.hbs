@@ -1,0 +1,46 @@
+{{!-- {{yield}} --}}
+
+<div class = "cardlist-container">
+<div class="userinfo-container">
+<div class="userprofile-container">
+    {{userlist-avatar title=employeeinfocard.first_name empImage=employeeinfocard.image}}
+    <div class = "name-designation-box">
+        <div>{{employeeinfocard.fullName}}</div> 
+         <div>{{employeeinfocard.designation}}</div>
+    </div>
+    </div>
+
+    <div class = "emailbox">
+         {{employeeinfocard.email}}
+    </div>
+
+    <div class = "teambox">
+         {{employeeinfocard.team}}
+    </div>
+</div>
+
+<div class="moreoption"> <BsDropdown as |dd|><dd.toggle>
+{{svg-jar "threedots"}}</dd.toggle>
+ <dd.menu as |ddm|>
+    <div class="optionlists">
+    {{#link-to "users-listview.edit" employeeinfocard.id }}<div class="items"> <ddm.item>Edit</ddm.item></div>{{/link-to}}
+    <div class="items"><ddm.item><button class = "delete-btn" {{action "deleteEmployee"}}>Delete</button></ddm.item></div>
+    </div>
+ </dd.menu>
+</BsDropdown>
+
+
+
+   
+    <PopupModal 
+    @isPopupOpen = {{this.deletePopupmodal}}
+    @icon = "popupalert"
+    @popup-btns = {{popupbuttons}}
+    @del-ok-action = {{action "confirmDelete"}}
+    @del-cancel-action = {{action "closepopup"}}
+    @confirm-action = {{action "confirmDelete"}}
+    @modal-title = "Do you wish to remove this employee from freshteam?"
+    @path="users-listview"
+    ></PopupModal>  
+</div>
+</div>
