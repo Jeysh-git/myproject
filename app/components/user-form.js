@@ -19,11 +19,12 @@ export default Component.extend({
   popupmessage:'',
   popupbuttons:null,
   isSlideOpen:true,
-  path:'users-listview',
+ 
 
 
   init(){
     this._super(...arguments);
+  
     let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
     this.set('teamlists',teams)
 
@@ -48,7 +49,6 @@ export default Component.extend({
 
       this.set('popupmessage',"Employee added successfully!")
     }
-    // this.set('path',(this.get('path')!= "users")||"users");
   },
   
   resetModel (){

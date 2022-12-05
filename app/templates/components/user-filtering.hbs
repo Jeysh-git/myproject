@@ -60,9 +60,12 @@
          </form>
       </div>
       <div class="route-icons">
-         {{#link-to viewPath invokeAction=(action 'toggleView') preventDefault=false}}
-            {{svg-jar viewicon  width="15px" height="15px"}}
+         
+         {{#each toggle-btn as |toggle|}}
+         {{#link-to toggle.path}}
+            {{svg-jar toggle.icon width="15px" height="15px"}}
          {{/link-to}}
+         {{/each}}
       </div>
    </div>
 {{yield employeeslist}}

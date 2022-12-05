@@ -1,4 +1,4 @@
-<div class="font-style users-container">
+<div class="users-container">
     <div class="sub-header">
         <div class = "subheader-text">Employees</div>
         <div class = "count-text">
@@ -10,11 +10,8 @@
 
     </div>
     <div class="cardslist-container">
-        
-        {{#each model as |user|}} 
-        {{user-list-item employeeinfocard = user }} 
+        {{users-list members = model }}
         {{outlet}}
-        {{/each}}
     </div>
 </div>
 

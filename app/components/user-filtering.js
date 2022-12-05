@@ -15,8 +15,6 @@ export default Component.extend({
     sort_title:null,
     search: "" ,
     displaysearch:null,
-    viewPath:"users",
-    viewicon:"list-view",
     
     employeeslist : computed ('selected_option','sort_option','sort_order','displaysearch',function(){
 
@@ -59,7 +57,7 @@ export default Component.extend({
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
         this.set('sort_title','First Name')
-        this.set('viewicon',((this.get('router').currentRouteName =="users.index") ? "list-view":"tile-view" ) );
+       
     },
 
     searchByEmployeeName(){
@@ -117,11 +115,6 @@ export default Component.extend({
             
         },
 
-        toggleView(){
-
-            this.set('viewPath',(this.get('viewPath')!="users")||"users-listview")
-            
-        }
     }
 
 });
