@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import EmberObject from '@ember/object';
 
 export default Component.extend({
-    listtogglebutton:null,
+    listtogglebutton:'',
     hasModalOpen:false,
     popupbuttons:null,
     user:'',
