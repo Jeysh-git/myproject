@@ -16,7 +16,7 @@
        {{/each}}   --}}
 
         {{#each popup-btns as |btn|}}
-        {{#link-to path class="popup-link" invokeAction=(if (not-eq btn.actionName 'null') (action (action 'buttonAction' btn.actionName))) 
+        {{#link-to path class="popup-link" invokeAction=(if btn.actionName (action (action 'buttonAction' btn.actionName))) 
         preventDefault=false}}
         <BsButton class="popup-buttons">
           
