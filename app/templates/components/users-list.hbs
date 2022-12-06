@@ -1,5 +1,5 @@
 {{#user-filtering 
-toggle-btn = cardtogglebutton
+toggle-btn = listtogglebutton
 employees=members 
 
 as |employeeslist|
@@ -9,8 +9,8 @@ as |employeeslist|
 <div class="content-container">
 
    {{#each employeeslist as |employee|}}
-      {{user-card employeeinfocard=employee 
-      initiateDelete = (action "openDeleteModal")
+      {{user-list-item employeeinfocard=employee
+       initiateDelete = (action "openDeleteModal")
       }}
       {{else}}
          <div class="nodata">
@@ -22,16 +22,13 @@ as |employeeslist|
   
 </div>
 
-  <PopupModal 
+<PopupModal 
     @isPopupOpen = {{this.hasModalOpen}}
     @icon = "popupalert"
     @popup-btns = {{popupbuttons}}
     @del-ok-action = {{action "confirmDelete"}}
     @del-cancel-action = {{action "closeDeleteModal"}}
     @modal-title = "Do you wish to remove this employee from freshteam?"
-    @path="users"
+    @path="users-listview"
     ></PopupModal>
-
 {{/user-filtering}}
-
-  

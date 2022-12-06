@@ -1,11 +1,13 @@
 import Component from '@ember/component';
 import EmberObject, { computed,get } from '@ember/object';
 import { debounce } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 
 
 export default Component.extend({
 
     selected_option:null,
+    router:service(),
     sort_option:null,
     sort_order:null,
     sortfieldList:null,
@@ -55,7 +57,7 @@ export default Component.extend({
         this.set('sort_option','first_name')
         this.set('sort_order','asc')
         this.set('sort_title','First Name')
-      //  this.getEmployeeListFromChild(this.employeeslist)
+       
     },
 
     searchByEmployeeName(){
@@ -65,7 +67,6 @@ export default Component.extend({
         else {
             this.set('displaysearch',null);
         }
-      //  this.getEmployeeListFromChild(this.employeeslist);
     },   
 
     filterArrayElements(arrayItems,search){
@@ -95,7 +96,6 @@ export default Component.extend({
         
         getTeams(teamName) {
             this.set('selected_option',teamName);
-          //  this.getEmployeeListFromChild(this.employeeslist);
            
         },
 
@@ -103,12 +103,10 @@ export default Component.extend({
             this.set('sort_option',field);
             let option = this.sortfieldList.find(item => item.field === field);
             this.set('sort_title',option.title)
-          //  this.getEmployeeListFromChild(this.employeeslist);
         },
 
         sortByFieldsInOrder(order){
             this.set('sort_order',order)
-          //  this.getEmployeeListFromChild(this.employeeslist);
         
         },
 
@@ -116,6 +114,7 @@ export default Component.extend({
             debounce(this,this.searchByEmployeeName,300);
             
         },
+
     }
 
 });

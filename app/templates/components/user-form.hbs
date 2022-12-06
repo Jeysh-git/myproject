@@ -1,3 +1,4 @@
+
 {{#if isSlideOpen}}
     <SlideModal 
         @slidetitle = {{formtitle}} 
@@ -6,9 +7,8 @@
         @form-reset-action = {{action "reset"}}
         @cancelbtn-action = {{action 'removeUncommitedModel'}}
         @member = {{member}}
-        @path = "users"
+        @path = {{path}}
     >
-
     <AvatarUpload 
         @member-profile = {{member}} 
         @imageplaceholder={{imageplaceholder}}
@@ -86,5 +86,5 @@
     @icon = "Success"
     @popup-btns = {{popupbuttons}}
     @modal-title = {{this.popupmessage}}
-    @path="users"
+    @path={{path}}
 ></PopupModal>

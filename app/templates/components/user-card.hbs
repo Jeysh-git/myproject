@@ -7,19 +7,8 @@
      {{#link-to "users.edit" employeeinfocard.id }}
           <button class="usercard-buttons">{{svg-jar 'Editicon' width='13px' height="14px" }}</button>
      {{/link-to}}
-     <button class="usercard-buttons" {{action "deleteEmployee" }}>{{svg-jar 'bin' width='13px' height="14px" }}</button>
+     <button class="usercard-buttons" {{action "userRecordToDelete" }}>{{svg-jar 'bin' width='13px' height="14px" }}</button>
     </div >
-   
-    <PopupModal 
-    @isPopupOpen = {{this.deletePopupmodal}}
-    @icon = "popupalert"
-    @popup-btns = {{popupbuttons}}
-    @del-ok-action = {{action "confirmDelete"}}
-    @del-cancel-action = {{action "closepopup"}}
-    @confirm-action = {{action "confirmDelete"}}
-    @modal-title = "Do you wish to remove this employee from freshteam?"
-    @path="users"
-    ></PopupModal>
 
     {{user-avatar title=employeeinfocard.first_name empImage=employeeinfocard.image}}
     <div class = "namebox">

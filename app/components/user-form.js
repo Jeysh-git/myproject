@@ -19,10 +19,12 @@ export default Component.extend({
   popupmessage:'',
   popupbuttons:null,
   isSlideOpen:true,
+ 
 
 
   init(){
     this._super(...arguments);
+  
     let teams =  this.store.peekAll('user').mapBy('team').uniq().filter(element => element!=undefined);
     this.set('teamlists',teams)
 

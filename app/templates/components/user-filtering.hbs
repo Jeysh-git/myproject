@@ -59,5 +59,13 @@
                 <div class="searchiconImage"> {{svg-jar 'Normal' height='15px' }}</div>
          </form>
       </div>
+      <div class="route-icons">
+         
+         {{#each toggle-btn as |toggle|}}
+         {{#link-to toggle.path}}
+            {{svg-jar toggle.icon width="15px" height="15px"}}
+         {{/link-to}}
+         {{/each}}
+      </div>
    </div>
 {{yield employeeslist}}

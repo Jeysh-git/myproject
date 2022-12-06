@@ -4,17 +4,14 @@
         <div class = "count-text">
             Total Employees: {{model.length}}
         </div>
-        {{#link-to "users.new"}}
+        {{#link-to "users-listview.new"}}
         <button class = "employee-button">Add Employee</button>
         {{/link-to}}
 
-       
-
     </div>
-  
-    <div class="cards-container">
-        {{user-cards members = model }}
+    <div class="cardslist-container">
+        {{users-list members = model }}
         {{outlet}}
     </div>
 </div>
-   
+

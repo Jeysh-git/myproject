@@ -11,6 +11,10 @@ Router.map(function() {
     this.route('new');
     this.route('edit',{path: '/edit/:user_id'});
   });
+  this.route('users-listview', function() {
+    this.route('new');
+    this.route('edit',{path:'/edit/:user_id'});
+  });
 });
 
 export default Router;
